@@ -10,6 +10,7 @@ type Project = {
   videoUrl?: string;
   tags: string[];
   link?: string;
+  year?: string;
 };
 
 const projects: Project[] = [
@@ -22,6 +23,7 @@ const projects: Project[] = [
     videoUrl: "/projects/figma.mp4",
     tags: ["React", "Next.js", "shadcn", "Tailwind CSS"],
     link: "https://figma-clone-git-main-pawan-kumar-sachdevas-projects.vercel.app/",
+    year: "2024",
   },
   {
     id: "2",
@@ -32,6 +34,7 @@ const projects: Project[] = [
     videoUrl: "/projects/chat.mp4",
     tags: ["Javascript", "NodeJs", "ReactJS", "Chakra UI"],
     link: "https://rapid-chat-q01f.onrender.com/",
+    year: "2023",
   },
 ];
 

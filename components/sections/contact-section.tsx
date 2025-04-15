@@ -40,7 +40,7 @@ export function ContactSection() {
               <h4 className="text-xl font-medium text-[#08090a] dark:text-white">
                 Ready to start a conversation?
               </h4>
-              <div className="flex md:flex-row sm:flex-col gap-4 items-center justify-center">
+              <div className="flex md:flex-row flex-col gap-4 items-center justify-center">
                 <a className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors">
                   <PhoneCallIcon className="w-4 h-4 mt-1" />
                   +91-8968692484

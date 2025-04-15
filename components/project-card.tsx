@@ -11,6 +11,7 @@ type Project = {
   videoUrl?: string;
   tags: string[];
   link?: string;
+  year?: string;
 };
 
 interface ProjectCardProps {
@@ -18,6 +19,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  console.log(project, "projectttt");
   return (
     <SpotlightCard
       gradientColor="rgba(34, 197, 94, 0.10)"
@@ -26,8 +28,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
       disableScale={true}
       className="flex items-start overflow-hidden rounded-sm border border-gray-200/80 dark:border-gray-800/50 transition-all duration-300 ease-in-out hover:border-gray-900/30 dark:hover:border-emerald-500/30 w-full cursor-pointer group"
     >
-      <div className="flex sm:flex-row flex-col w-full">
-        <div className="relative h-[240px] w-full sm:w-[40%] overflow-hidden">
+      <div className="flex sm:flex-row flex-col w-full ">
+        <div className="hidden md:block md:w-60 overflow-hidden border border-black">
           {project.imageUrl && (
             <Image
               src={project.imageUrl}
@@ -72,7 +74,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <div className="flex items-center gap-2 text-xs font-medium">
               <div className="flex items-center gap-1 px-2 py-1 rounded-sm bg-white dark:bg-[#0a0a0a] border border-gray-200/80 dark:border-gray-800/50 text-[#737373] dark:text-[#A1A1AA] group-hover:border-gray-900/30 dark:group-hover:border-emerald-500/30 transition-all duration-300">
                 <CalendarRangeIcon className="size-3" />
-                <span>2024</span>
+                <span>{project?.year}</span>
               </div>
             </div>
 
