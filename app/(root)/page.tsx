@@ -1,4 +1,5 @@
 import { AboutSection } from "@/components/sections/about-section";
+import { ActivitySection } from "@/components/sections/activity-section";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { IntroSection } from "@/components/sections/Intro-section";
@@ -12,6 +13,8 @@ export default function Home() {
       <IntroSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <AboutSection />
+      <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
+      <ActivitySection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <SkillsSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
