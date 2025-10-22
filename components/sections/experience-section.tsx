@@ -20,7 +20,7 @@ const experiences: Experience[] = [
     company: "Hitachi Mgrm Net",
     companyLink: "https://www.linkedin.com/company/hitachi-mgrm",
     position: "Software Developer",
-    duration: "July 2024 - Present",
+    duration: "June 2024 - Present",
     description: [
       "Led the frontend development of a CRM module for government schools in Meghalaya, built using Next.js, supporting over 2 million users.",
       "Architected real-time call integration for the agent module using WebRTC, JsSIP, Asterisk, and SocketIO.",
@@ -45,7 +45,7 @@ const experiences: Experience[] = [
     companyLink:
       "https://www.linkedin.com/company/laminaar-aviation-infotech-private-limited/",
     position: "Associate Software Engineer",
-    duration: "Feb 2023 - June 2024",
+    duration: "Feb 2023 - May 2024",
     description: [
       "Developed L&T Module for Airlines Software",
       "Covered Unit and End-to-End Test Cases",

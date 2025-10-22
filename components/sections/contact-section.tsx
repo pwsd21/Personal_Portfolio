@@ -1,4 +1,9 @@
-import { Mail, MessageSquare, PhoneCallIcon } from "lucide-react";
+import {
+  DownloadCloud,
+  Mail,
+  MessageSquare,
+  PhoneCallIcon,
+} from "lucide-react";
 import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
@@ -55,16 +60,6 @@ export function ContactSection() {
               </div>
 
               <div className="flex items-center justify-center gap-4 pt-4">
-                {/* <a
-                  href="https://x.com/SimplyRahul7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
-                >
-                  <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <FaXTwitter className="relative w-5 h-5" />
-                </a> */}
-
                 <a
                   href="https://github.com/pwsd21"
                   target="_blank"
@@ -83,6 +78,16 @@ export function ContactSection() {
                 >
                   <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <FaLinkedin className="relative w-5 h-5" />
+                </a>
+
+                <a
+                  href="https://drive.google.com/file/d/1Yx8ZIYZITdrNGhXy0AAL1jfB4NoLdhTm/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-gray-200/50 dark:to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <DownloadCloud className="relative w-5 h-5" />
                 </a>
               </div>
             </div>

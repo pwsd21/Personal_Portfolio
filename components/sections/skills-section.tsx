@@ -8,6 +8,7 @@ import {
   SiAsterisk,
   SiDjango,
   SiExpress,
+  SiJitsi,
   SiMantine,
   SiMaterialdesign,
   SiMongodb,
@@ -72,32 +73,27 @@ const skillCategories: SkillCategory[] = [
       { name: "React.js", icon: <FaReact /> },
       { name: "Next.js", icon: <IconBrandNextjs /> },
       { name: "Tailwind CSS", icon: <RiTailwindCssFill /> },
-      { name: "Figma", icon: <FiFigma /> },
+      { name: "RRV7(Remix)", icon: <FiFigma /> },
       { name: "Material UI", icon: <SiMaterialdesign /> },
       { name: "NextUI", icon: <SiNextdotjs /> },
       { name: "Mantine", icon: <SiMantine /> },
-      { name: "ShadCN", icon: <SiReact /> },
+      { name: "shadcn", icon: <SiReact /> },
       { name: "Zustand", icon: <SiReact /> },
       { name: "Redux Toolkit", icon: <SiRedux /> },
       { name: "React Query", icon: <SiReactquery /> },
     ],
   },
   {
-    name: "Backend",
+    name: "Backend & Databases",
     skills: [
-      { name: "Django", icon: <SiDjango /> },
+      // { name: "Django", icon: <SiDjango /> },
       { name: "Node.js", icon: <SiNodedotjs /> },
       { name: "Express.js", icon: <SiExpress /> },
-      { name: "tRPC", icon: <SiTrpc /> }, // optional, if you use it
-    ],
-  },
-  {
-    name: "Databases",
-    skills: [
       { name: "PostgreSQL", icon: <BiLogoPostgresql /> },
       { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "Qdrant", icon: <RiDatabase2Fill /> },
-      { name: "Redis", icon: <DiRedis /> },
+      // { name: "Qdrant", icon: <RiDatabase2Fill /> },
+      // { name: "Redis", icon: <DiRedis /> },
+      // { name: "tRPC", icon: <SiTrpc /> }, // optional, if you use it
     ],
   },
   {
@@ -106,8 +102,9 @@ const skillCategories: SkillCategory[] = [
       { name: "WebRTC", icon: <SiWebrtc /> },
       { name: "JsSIP", icon: <RiJavascriptFill /> },
       { name: "Asterisk", icon: <SiAsterisk /> },
-      { name: "rcWebPhone", icon: <MdCall /> },
+      // { name: "Ring Central", icon: <MdCall /> },
       { name: "Socket.IO", icon: <SiSocketdotio /> },
+      { name: "Jitsi", icon: <SiJitsi /> },
     ],
   },
   {
@@ -188,8 +185,8 @@ export function SkillsSection() {
         {[
           { value: "4+", label: "Years Experience" },
           { value: "10+", label: "Projects" },
-          { value: "10+", label: "Clients" },
-          { value: "25+", label: "Technologies" },
+          { value: "8+", label: "Clients" },
+          { value: "20+", label: "Technologies" },
         ].map((highlight) => (
           <div
             key={highlight.label}

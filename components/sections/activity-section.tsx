@@ -4,13 +4,14 @@ import HeadingBadge from "@/components/heading-badge";
 import { SpotlightCard } from "@/components/ui/spotlight-card";
 import {
   Activity,
-  Github,
-  Code2,
+  //   Github,
+  //   Code2,
   TrendingUp,
   ExternalLink,
+  Github,
 } from "lucide-react";
 import { CombinedActivityTracker } from "../activity/combined-activity-tracker";
-import { LeetCodeStats } from "../activity/leetcode-stats";
+// import { LeetCodeStats } from "../activity/leetcode-stats";
 import { GitHubLanguages } from "../activity/github-languages";
 
 export function ActivitySection() {
@@ -64,9 +65,9 @@ export function ActivitySection() {
       </SpotlightCard>
 
       {/* Two Column Layout for LeetCode Stats and Languages */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-full">
         {/* LeetCode Stats */}
-        <SpotlightCard
+        {/* <SpotlightCard
           gradientColor="rgba(34, 197, 94, 0.1)"
           lightGradientColor="rgba(8, 9, 10, 0.1)"
           spotlightSize={400}
@@ -95,7 +96,7 @@ export function ActivitySection() {
             </div>
             <LeetCodeStats username="pawansachdeva1998" />
           </div>
-        </SpotlightCard>
+        </SpotlightCard> */}
 
         {/* GitHub Languages */}
         <SpotlightCard
