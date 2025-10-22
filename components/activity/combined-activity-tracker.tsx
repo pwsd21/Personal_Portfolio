@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react";
 import {
   Activity,
-  Github,
-  Code2,
   ExternalLink,
   Loader2,
   Flame,
   Calendar,
   X,
 } from "lucide-react";
+import { FaGithub } from "react-icons/fa6";
+import { SiLeetcode } from "react-icons/si";
 
 interface Activity {
   date: Date;
@@ -298,15 +298,14 @@ export function CombinedActivityTracker({
       </div>
 
       {/* Contribution Graph */}
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto scrollbar-hide">
         <div className="inline-flex flex-col gap-1 p-4 bg-gray-50 dark:bg-gray-900/30 rounded-lg border border-gray-200 dark:border-gray-800 min-w-max">
           <div className="flex gap-1 mb-2">
             <div className="w-8"></div>
             {months.map((month, idx) => (
               <div
                 key={idx}
-                className="text-xs text-gray-500 dark:text-gray-400"
-                style={{ width: "52px", textAlign: "center" }}
+                className="text-xs text-gray-500 dark:text-gray-400 w-full text-center px-4"
               >
                 {month}
               </div>
@@ -321,7 +320,7 @@ export function CombinedActivityTracker({
                     key={day}
                     className="text-xs text-gray-500 dark:text-gray-400 h-3 flex items-center"
                   >
-                    {idx % 2 === 0 ? day : ""}
+                    {day}
                   </div>
                 )
               )}
@@ -338,7 +337,7 @@ export function CombinedActivityTracker({
                       <div
                         key={dayIdx}
                         onClick={() => handleDayClick(activity)}
-                        className={`w-3 h-3 rounded-sm ${
+                        className={`w-3 h-3  ${
                           activity
                             ? getContributionColor(activity.level)
                             : "bg-transparent"
@@ -405,10 +404,11 @@ export function CombinedActivityTracker({
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                 <div className="flex items-center gap-2">
-                  <Github
+                  {/* <Github
                     size={18}
                     className="text-gray-900 dark:text-emerald-500"
-                  />
+                  /> */}
+                  <FaGithub />
                   <span className="text-sm font-medium text-gray-900 dark:text-white">
                     Contributed on GitHub
                   </span>
@@ -421,7 +421,7 @@ export function CombinedActivityTracker({
 
               <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                 <div className="flex items-center gap-2">
-                  <Code2
+                  <SiLeetcode
                     size={18}
                     className="text-gray-900 dark:text-emerald-500"
                   />
