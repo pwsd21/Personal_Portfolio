@@ -34,15 +34,8 @@ export const metadata: Metadata = {
     title: "Pawan Sachdeva",
     description: "",
     type: "website",
-    // url: "https://rahul.bora",
+    url: "https://personal-portfolio-pawan-kumar-sachdevas-projects.vercel.app/",
   },
-  // twitter: {
-  //   title: "Pawan Sachdeva",
-  //   description: "",
-  //   card: "summary_large_image",
-  //   site: "https://x.com/SimplyRahul7",
-  //   creator: "@pwsd21",
-  // },
 };
 
 export default function RootLayout({

@@ -19,7 +19,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  console.log(project, "projectttt");
   return (
     <SpotlightCard
       gradientColor="rgba(34, 197, 94, 0.10)"
