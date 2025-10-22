@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarRangeIcon } from "lucide-react";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import { SpotlightCard } from "@/app/components/ui/spotlight-card";
 
 type Project = {
   id: string;

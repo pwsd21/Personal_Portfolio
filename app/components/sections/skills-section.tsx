@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import HeadingBadge from "@/components/heading-badge";
+import HeadingBadge from "@/app/components/heading-badge";
 import { IconBrandNextjs } from "@tabler/icons-react";
 import {
   SiAsterisk,

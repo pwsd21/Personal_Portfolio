@@ -4,8 +4,8 @@ import {
   MessageSquare,
   PhoneCallIcon,
 } from "lucide-react";
-import HeadingBadge from "@/components/heading-badge";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import HeadingBadge from "@/app/components/heading-badge";
+import { SpotlightCard } from "@/app/components/ui/spotlight-card";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export function ContactSection() {

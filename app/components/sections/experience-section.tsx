@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import HeadingBadge from "@/components/heading-badge";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import HeadingBadge from "@/app/components/heading-badge";
+import { SpotlightCard } from "@/app/components/ui/spotlight-card";
 import { Building2, Calendar, ChevronRight, Briefcase } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 
 type Experience = {
   company: string;

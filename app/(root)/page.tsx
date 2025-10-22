@@ -1,11 +1,11 @@
-import { AboutSection } from "@/components/sections/about-section";
-import { ActivitySection } from "@/components/sections/activity-section";
-import { ContactSection } from "@/components/sections/contact-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
-import { IntroSection } from "@/components/sections/Intro-section";
-import { ProjectsSection } from "@/components/sections/projects-section";
-import { ServicesSection } from "@/components/sections/services-section";
-import { SkillsSection } from "@/components/sections/skills-section";
+import { AboutSection } from "@/app/components/sections/about-section";
+import { ActivitySection } from "@/app/components/sections/activity-section";
+import { ContactSection } from "@/app/components/sections/contact-section";
+import { ExperienceSection } from "@/app/components/sections/experience-section";
+import { IntroSection } from "@/app/components/sections/Intro-section";
+import { ProjectsSection } from "@/app/components/sections/projects-section";
+import { ServicesSection } from "@/app/components/sections/services-section";
+import { SkillsSection } from "@/app/components/sections/skills-section";
 
 export default function Home() {
   return (

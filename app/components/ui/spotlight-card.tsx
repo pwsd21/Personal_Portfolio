@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 import { useTheme } from "next-themes";
 
 export interface SpotlightCardProps

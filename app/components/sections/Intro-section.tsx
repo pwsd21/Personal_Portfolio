@@ -1,4 +1,4 @@
-import HeadingBadge from "@/components/heading-badge";
+import HeadingBadge from "@/app/components/heading-badge";
 import { Hand } from "lucide-react";
 
 export function IntroSection() {

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 import { MoonIcon, SunIcon } from "lucide-react";
 
 export const ModeToggle = () => {

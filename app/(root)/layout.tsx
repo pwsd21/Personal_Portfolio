@@ -1,6 +1,6 @@
 import React from "react";
-import { Navbar } from "@/components/navbar";
-import { ModeToggle } from "@/components/mode-toggle";
+import { Navbar } from "@/app/components/navbar";
+import { ModeToggle } from "@/app/components/mode-toggle";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

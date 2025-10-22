@@ -1,7 +1,7 @@
 "use client";
 
-import HeadingBadge from "@/components/heading-badge";
-import { SpotlightCard } from "@/components/ui/spotlight-card";
+import HeadingBadge from "@/app/components/heading-badge";
+import { SpotlightCard } from "@/app/components/ui/spotlight-card";
 import {
   Activity,
   //   Github,

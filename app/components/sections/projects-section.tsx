@@ -1,5 +1,5 @@
-import { ProjectCard } from "@/components/project-card";
-import HeadingBadge from "@/components/heading-badge";
+import { ProjectCard } from "@/app/components/project-card";
+import HeadingBadge from "@/app/components/heading-badge";
 import { FolderGit2 } from "lucide-react";
 
 type Project = {

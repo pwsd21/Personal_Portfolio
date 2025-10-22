@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
