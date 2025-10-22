@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import {
   Activity,
   ExternalLink,
@@ -41,11 +41,7 @@ export function CombinedActivityTracker({
   const currentYear = new Date().getFullYear();
   const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
 
-  useEffect(() => {
-    fetchCombinedActivities();
-  }, [githubUsername, leetcodeUsername, selectedYear]);
-
-  const calculateStreaks = (activities: Activity[]) => {
+  const calculateStreaks = useCallback((activities: Activity[]) => {
     let currentStreak = 0;
     let longestStreak = 0;
     let tempStreak = 0;
@@ -91,9 +87,9 @@ export function CombinedActivityTracker({
     }
 
     return { current: currentStreak, longest: longestStreak };
-  };
+  }, []);
 
-  const fetchCombinedActivities = async () => {
+  const fetchCombinedActivities = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -110,16 +106,18 @@ export function CombinedActivityTracker({
 
       const activityMap = new Map<string, Activity>();
 
-      githubData.contributions.forEach((contribution: any) => {
-        const dateStr = contribution.date;
-        activityMap.set(dateStr, {
-          date: new Date(contribution.date),
-          github: contribution.count,
-          leetcode: 0,
-          total: contribution.count,
-          level: contribution.level,
-        });
-      });
+      githubData.contributions.forEach(
+        (contribution: { date: string; count: number; level: number }) => {
+          const dateStr = contribution.date;
+          activityMap.set(dateStr, {
+            date: new Date(contribution.date),
+            github: contribution.count,
+            leetcode: 0,
+            total: contribution.count,
+            level: contribution.level,
+          });
+        }
+      );
 
       const activitiesArray = Array.from(activityMap.values());
       const total = activitiesArray.reduce((sum, act) => sum + act.total, 0);
@@ -135,7 +133,11 @@ export function CombinedActivityTracker({
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [githubUsername, selectedYear, calculateStreaks]);
+
+  useEffect(() => {
+    fetchCombinedActivities();
+  }, [leetcodeUsername, fetchCombinedActivities]);
 
   const getContributionColor = (level: number) => {
     const colors: Record<number, string> = {
@@ -315,7 +317,7 @@ export function CombinedActivityTracker({
           <div className="flex gap-1">
             <div className="flex flex-col gap-1 justify-around pr-2">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
-                (day, idx) => (
+                (day) => (
                   <div
                     key={day}
                     className="text-xs text-gray-500 dark:text-gray-400 h-3 flex items-center"

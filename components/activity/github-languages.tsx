@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Code2, Loader2 } from "lucide-react";
 
 interface Language {
@@ -13,16 +13,16 @@ interface GitHubLanguagesProps {
   username?: string;
 }
 
+interface Repository {
+  language: string | null;
+}
+
 export function GitHubLanguages({ username = "pwsd21" }: GitHubLanguagesProps) {
   const [languages, setLanguages] = useState<Language[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchGitHubLanguages();
-  }, [username]);
-
-  const fetchGitHubLanguages = async () => {
+  const fetchGitHubLanguages = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -35,7 +35,7 @@ export function GitHubLanguages({ username = "pwsd21" }: GitHubLanguagesProps) {
         throw new Error("Failed to fetch repositories");
       }
 
-      const repos = await reposResponse.json();
+      const repos: Repository[] = await reposResponse.json();
 
       const languageBytes: Record<string, number> = {};
 
@@ -66,7 +66,11 @@ export function GitHubLanguages({ username = "pwsd21" }: GitHubLanguagesProps) {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [username]);
+
+  useEffect(() => {
+    fetchGitHubLanguages();
+  }, [fetchGitHubLanguages]);
 
   const getLanguageColor = (language: string) => {
     const colors: Record<string, string> = {

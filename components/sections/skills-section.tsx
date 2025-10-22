@@ -3,10 +3,8 @@
 import { useEffect, useState } from "react";
 import HeadingBadge from "@/components/heading-badge";
 import { IconBrandNextjs } from "@tabler/icons-react";
-import { DiRedis } from "react-icons/di";
 import {
   SiAsterisk,
-  SiDjango,
   SiExpress,
   SiJitsi,
   SiMantine,
@@ -20,7 +18,6 @@ import {
   SiReactquery,
   SiRedux,
   SiSocketdotio,
-  SiTrpc,
   SiTypescript,
   SiVercel,
   SiWebrtc,
@@ -33,17 +30,12 @@ import {
   FaPython,
   FaReact,
 } from "react-icons/fa";
-import {
-  RiTailwindCssFill,
-  RiDatabase2Fill,
-  RiJavascriptFill,
-} from "react-icons/ri";
+import { RiTailwindCssFill, RiJavascriptFill } from "react-icons/ri";
 import { FiFigma } from "react-icons/fi";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { useTheme } from "next-themes";
 import { Lightbulb } from "lucide-react";
 import { FaCss3Alt, FaHtml5 } from "react-icons/fa6";
-import { MdCall } from "react-icons/md";
 
 type Skill = {
   name: string;

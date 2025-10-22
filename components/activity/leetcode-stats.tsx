@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Award, Loader2 } from "lucide-react";
 
 interface LeetCodeStatsData {
@@ -26,11 +26,7 @@ export function LeetCodeStats({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchLeetCodeStats();
-  }, [username]);
-
-  const fetchLeetCodeStats = async () => {
+  const fetchLeetCodeStats = useCallback(async () => {
     try {
       setIsLoading(true);
       setError(null);
@@ -78,13 +74,17 @@ export function LeetCodeStats({
           });
           setError(null);
         }
-      } catch (altErr) {
+      } catch {
         setError("Unable to load stats");
       }
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [username]);
+
+  useEffect(() => {
+    fetchLeetCodeStats();
+  }, [fetchLeetCodeStats]);
 
   if (isLoading) {
     return (
