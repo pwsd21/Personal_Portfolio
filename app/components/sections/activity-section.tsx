@@ -33,8 +33,7 @@ export function ActivitySection() {
             </span>
           </h3>
           <p className="text-[#737373] dark:text-[#A1A1AA] text-sm">
-            Track my combined GitHub and LeetCode activities, streaks, and
-            programming language usage.
+            Track my GitHub activities, streaks, and programming language usage.
           </p>
         </div>
       </div>
@@ -59,7 +58,7 @@ export function ActivitySection() {
           </div>
           <CombinedActivityTracker
             githubUsername="pwsd21"
-            leetcodeUsername="pawansachdeva1998"
+            // leetcodeUsername="pawansachdeva1998"
           />
         </div>
       </SpotlightCard>

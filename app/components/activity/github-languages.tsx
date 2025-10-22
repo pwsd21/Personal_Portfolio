@@ -37,8 +37,8 @@ export function GitHubLanguages({ username = "pwsd21" }: GitHubLanguagesProps) {
 
       const repos: Repository[] = await reposResponse.json();
 
-      const languageBytes: Record<string, number> = {};
 
+      const languageBytes: Record<string, number> = {};
       for (const repo of repos) {
         if (repo.language) {
           languageBytes[repo.language] =
@@ -58,7 +58,6 @@ export function GitHubLanguages({ username = "pwsd21" }: GitHubLanguagesProps) {
         }))
         .sort((a, b) => b.count - a.count)
         .slice(0, 6);
-
       setLanguages(languageData);
     } catch (err) {
       console.error("Error fetching languages:", err);

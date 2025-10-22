@@ -10,24 +10,24 @@ import {
   X,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+// import { SiLeetcode } from "react-icons/si";
 
 interface Activity {
   date: Date;
   github: number;
-  leetcode: number;
+  // leetcode: number;
   total: number;
   level: number;
 }
 
 interface CombinedActivityTrackerProps {
   githubUsername?: string;
-  leetcodeUsername?: string;
+  // leetcodeUsername?: string;
 }
 
 export function CombinedActivityTracker({
   githubUsername = "pwsd21",
-  leetcodeUsername = "pawansachdeva1998",
+  // leetcodeUsername = "pawansachdeva1998",
 }: CombinedActivityTrackerProps) {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
@@ -112,7 +112,7 @@ export function CombinedActivityTracker({
           activityMap.set(dateStr, {
             date: new Date(contribution.date),
             github: contribution.count,
-            leetcode: 0,
+            // leetcode: 0,
             total: contribution.count,
             level: contribution.level,
           });
@@ -137,7 +137,7 @@ export function CombinedActivityTracker({
 
   useEffect(() => {
     fetchCombinedActivities();
-  }, [leetcodeUsername, fetchCombinedActivities]);
+  }, [fetchCombinedActivities]);
 
   const getContributionColor = (level: number) => {
     const colors: Record<number, string> = {
@@ -247,7 +247,7 @@ export function CombinedActivityTracker({
           >
             GitHub <ExternalLink size={14} />
           </a>
-          <span className="text-gray-400">|</span>
+          {/* <span className="text-gray-400">|</span>
           <a
             href={`https://leetcode.com/${leetcodeUsername}`}
             target="_blank"
@@ -255,7 +255,7 @@ export function CombinedActivityTracker({
             className="flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400 hover:underline"
           >
             LeetCode <ExternalLink size={14} />
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -316,16 +316,14 @@ export function CombinedActivityTracker({
 
           <div className="flex gap-1">
             <div className="flex flex-col gap-1 justify-around pr-2">
-              {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(
-                (day) => (
-                  <div
-                    key={day}
-                    className="text-xs text-gray-500 dark:text-gray-400 h-3 flex items-center"
-                  >
-                    {day}
-                  </div>
-                )
-              )}
+              {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
+                <div
+                  key={day}
+                  className="text-xs text-gray-500 dark:text-gray-400 h-3 flex items-center"
+                >
+                  {day}
+                </div>
+              ))}
             </div>
 
             <div className="flex gap-1">
@@ -421,7 +419,7 @@ export function CombinedActivityTracker({
                 </span>
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+              {/* <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <SiLeetcode
                     size={18}
@@ -435,9 +433,9 @@ export function CombinedActivityTracker({
                   {selectedDay.leetcode}{" "}
                   {selectedDay.leetcode === 1 ? "submission" : "submissions"}
                 </span>
-              </div>
+              </div> */}
 
-              <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+              {/* <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                     Total Activity
@@ -446,7 +444,7 @@ export function CombinedActivityTracker({
                     {selectedDay.total}
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
