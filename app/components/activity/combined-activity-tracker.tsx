@@ -42,51 +42,64 @@ CombinedActivityTrackerProps) {
   const years = Array.from({ length: 7 }, (_, i) => currentYear - i);
 
   const calculateStreaks = useCallback((activities: Activity[]) => {
-    let currentStreak = 0;
-    let longestStreak = 0;
-    let tempStreak = 0;
+    if (activities.length === 0) return { current: 0, longest: 0 };
+
+    // Ensure all dates in year are represented (including zero-contribution days)
+    const allDates: Activity[] = [];
+    const firstDate = new Date(activities[0].date);
+    const lastDate = new Date(activities[activities.length - 1].date);
+
+    for (
+      let d = new Date(firstDate);
+      d <= lastDate;
+      d.setDate(d.getDate() + 1)
+    ) {
+      const dateStr = d.toISOString().split("T")[0];
+      const existing = activities.find(
+        (a) => a.date.toISOString().split("T")[0] === dateStr
+      );
+      allDates.push(
+        existing || {
+          date: new Date(d),
+          github: 0,
+          total: 0,
+          level: 0,
+        }
+      );
+    }
+
+    // Calculate longest and current streak
+    let longest = 0;
+    let current = 0;
+    let temp = 0;
+
+    for (let i = 0; i < allDates.length; i++) {
+      if (allDates[i].total > 0) {
+        temp++;
+        longest = Math.max(longest, temp);
+      } else {
+        temp = 0;
+      }
+    }
+
+    // Calculate current streak backward from today
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const sortedDesc = [...activities].sort(
-      (a, b) => b.date.getTime() - a.date.getTime()
-    );
-
-    let foundToday = false;
-    for (const activity of sortedDesc) {
-      const activityDate = new Date(activity.date);
-      activityDate.setHours(0, 0, 0, 0);
-
-      if (
-        !foundToday &&
-        activityDate.getTime() === today.getTime() &&
-        activity.total > 0
-      ) {
-        foundToday = true;
-      }
-
-      if (foundToday || activityDate.getTime() === today.getTime() - 86400000) {
-        if (activity.total > 0) {
-          currentStreak++;
-        } else if (foundToday) {
-          break;
-        }
+    current = 0;
+    for (let i = allDates.length - 1; i >= 0; i--) {
+      const date = allDates[i].date;
+      const diffDays = Math.floor(
+        (today.getTime() - date.getTime()) / 86400000
+      );
+      if (diffDays === current && allDates[i].total > 0) {
+        current++;
+      } else if (diffDays > current) {
+        break;
       }
     }
 
-    const sortedAsc = [...activities].sort(
-      (a, b) => a.date.getTime() - b.date.getTime()
-    );
-    for (const activity of sortedAsc) {
-      if (activity.total > 0) {
-        tempStreak++;
-        longestStreak = Math.max(longestStreak, tempStreak);
-      } else {
-        tempStreak = 0;
-      }
-    }
-
-    return { current: currentStreak, longest: longestStreak };
+    return { current, longest };
   }, []);
 
   const fetchCombinedActivities = useCallback(async () => {
