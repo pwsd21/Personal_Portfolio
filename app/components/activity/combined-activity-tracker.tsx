@@ -337,7 +337,7 @@ CombinedActivityTrackerProps) {
                       <div
                         key={dayIdx}
                         onClick={() => handleDayClick(activity)}
-                        className={`w-3 h-3  ${
+                        className={`w-3 h-3 rounded-xs  ${
                           activity
                             ? getContributionColor(activity.level)
                             : "bg-transparent"

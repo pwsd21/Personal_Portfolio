@@ -93,7 +93,6 @@ export function ContactSection() {
             </div>
 
             <div className="text-center">
-              Ready to
               <p className="inline-block px-4 py-2 text-sm text-[#737373] dark:text-[#A1A1AA] bg-gray-50 dark:bg-[#141414] rounded-sm">
                 💬 I typically respond within 1 hour!
               </p>
