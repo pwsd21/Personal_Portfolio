@@ -39,7 +39,7 @@ export function CombinedActivityTracker({
   const [showModal, setShowModal] = useState(false);
 
   const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: 5 }, (_, i) => currentYear - i);
+  const years = Array.from({ length: 7 }, (_, i) => currentYear - i);
 
   const calculateStreaks = useCallback((activities: Activity[]) => {
     let currentStreak = 0;
@@ -144,7 +144,7 @@ export function CombinedActivityTracker({
             },
           }),
         });
-        
+
         if (leetcodeGraphQLResponse.ok) {
           const leetcodeData = await leetcodeGraphQLResponse.json();
           console.log("LeetCode GraphQL Response:", leetcodeData);

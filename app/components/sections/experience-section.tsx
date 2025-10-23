@@ -22,10 +22,10 @@ const experiences: Experience[] = [
     position: "Software Developer",
     duration: "June 2024 - Present",
     description: [
-      "Led the frontend development of a CRM module for government schools in Meghalaya, built using Next.js, supporting over 2 million users.",
-      "Architected real-time call integration for the agent module using WebRTC, JsSIP, Asterisk, and SocketIO.",
-      "Integrated Aritficial Intelligence using RCWebphone to generate transcript and summary of the calls.",
-      "Developed the Mid-Day Meal Module for Government Schools in Odisha using Next.js, Zustand, React Query.",
+      "Led CRM platform development for 8M+ users across 5000+ schools, using Next.js and a scalable micro-frontend architecture.",
+      "Implemented real-time calling in the agent module with WebRTC, JsSIP, Asterisk, and Socket.IO, improving agent response time by 40%.",
+      "Integrated AI-driven call summaries with RingCentral and added Jitsi for seamless in-browser video calls, reducing manual documentation by 90%.",
+      "Architected Mid-Day Meal system for 3000+ schools using Next.js, Zustand, and React Query, automating meal tracking and staff payouts.",
     ],
     technologies: [
       "Next.js",
@@ -47,9 +47,9 @@ const experiences: Experience[] = [
     position: "Associate Software Engineer",
     duration: "Feb 2023 - May 2024",
     description: [
-      "Developed L&T Module for Airlines Software",
-      "Covered Unit and End-to-End Test Cases",
-      "Created Database tables using MS SQL and wrote backend stored procedures.",
+      "Led a team of 4 to build airline operational modules using React.js, RTK and a custom MUI library.",
+      "Achieved 80%+ test coverage using Jest, RTL and MSW, maintaining <5% code duplication (SonarQube).",
+      "Deployed Node.js services on AWS EC2 with PM2, increasing uptime and reliability for airline crew systems.",
     ],
     technologies: [
       "React",
@@ -87,9 +87,9 @@ const experiences: Experience[] = [
     position: "Programmer Analyst Trainee",
     duration: "June 2021 - December 2022",
     description: [
-      "Developed an Inventory Management Platform for pharma-based client, emphasising REST API integration.",
-      "Crafted responsive and compatible modules using Material UI",
-      "Created optimized Node.js APIs with MongoDB, reducing response times",
+      "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers.",
+      "Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards.",
+      "Integrated AWS services (EC2, S3, IAM) via CI/CD (Jenkins) to streamline deployments.",
     ],
     technologies: [
       "React",
