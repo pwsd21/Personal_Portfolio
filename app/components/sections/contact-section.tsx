@@ -81,7 +81,7 @@ export function ContactSection() {
                 </a>
 
                 <a
-                  href="https://drive.google.com/file/d/1Yx8ZIYZITdrNGhXy0AAL1jfB4NoLdhTm/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1DHZdxThhy_KtRSEQXbDyqTGcsBA3vlhG/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group p-3 rounded-sm bg-gray-100 dark:bg-[#191a1a] text-[#08090a] dark:text-emerald-500 hover:bg-gray-200 dark:hover:bg-emerald-500/10 transition-colors relative overflow-hidden"
@@ -93,6 +93,7 @@ export function ContactSection() {
             </div>
 
             <div className="text-center">
+              Ready to
               <p className="inline-block px-4 py-2 text-sm text-[#737373] dark:text-[#A1A1AA] bg-gray-50 dark:bg-[#141414] rounded-sm">
                 💬 I typically respond within 1 hour!
               </p>

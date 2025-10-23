@@ -15,8 +15,8 @@ export function IntroSection() {
           </h1>
 
           <p className="text-xl sm:text-2xl font-medium text-[#737373] dark:text-[#A1A1AA] max-w-2xl">
-            A Full Stack Developer passionate about crafting seamless digital
-            experiences
+            A Senior Software Engineer passionate about crafting seamless
+            digital experiences
           </p>
 
           <p className="text-sm sm:text-base font-normal text-[#737373] dark:text-[#A1A1AA] max-w-2xl">

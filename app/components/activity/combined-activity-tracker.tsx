@@ -27,8 +27,8 @@ interface CombinedActivityTrackerProps {
 
 export function CombinedActivityTracker({
   githubUsername = "pwsd21",
-  // leetcodeUsername = "pawansachdeva1998",
-}: CombinedActivityTrackerProps) {
+}: // leetcodeUsername = "pawansachdeva1998",
+CombinedActivityTrackerProps) {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
@@ -142,10 +142,10 @@ export function CombinedActivityTracker({
   const getContributionColor = (level: number) => {
     const colors: Record<number, string> = {
       0: "bg-gray-200 dark:bg-gray-800",
-      1: "bg-emerald-200 dark:bg-emerald-900/50",
-      2: "bg-emerald-400 dark:bg-emerald-700",
-      3: "bg-emerald-500 dark:bg-emerald-500",
-      4: "bg-emerald-600 dark:bg-emerald-400",
+      1: "bg-[#9be9a8] dark:bg-[#0e4429]", // GitHub light green
+      2: "bg-[#40c463] dark:bg-[#006d32]", // GitHub medium green
+      3: "bg-[#30a14e] dark:bg-[#26a641]", // GitHub dark green
+      4: "bg-[#216e39] dark:bg-[#39d353]", // GitHub darkest green
     };
     return colors[level] || colors[0];
   };
