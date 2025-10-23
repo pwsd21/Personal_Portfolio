@@ -10,25 +10,25 @@ import {
   X,
 } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
-import { SiLeetcode } from "react-icons/si";
+// import { SiLeetcode } from "react-icons/si";
 
 interface Activity {
   date: Date;
   github: number;
-  leetcode: number;
+  // leetcode: number;
   total: number;
   level: number;
 }
 
 interface CombinedActivityTrackerProps {
   githubUsername?: string;
-  leetcodeUsername?: string;
+  // leetcodeUsername?: string;
 }
 
 export function CombinedActivityTracker({
   githubUsername = "pwsd21",
-  leetcodeUsername = "pawansachdeva1998",
-}: CombinedActivityTrackerProps) {
+}: // leetcodeUsername = "pawansachdeva1998",
+CombinedActivityTrackerProps) {
   const [activities, setActivities] = useState<Activity[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
@@ -114,7 +114,7 @@ export function CombinedActivityTracker({
           activityMap.set(dateStr, {
             date: new Date(contribution.date),
             github: contribution.count,
-            leetcode: 0,
+            // leetcode: 0,
             total: contribution.count,
             level: contribution.level,
           });
@@ -122,85 +122,85 @@ export function CombinedActivityTracker({
       );
 
       // Fetch LeetCode submission calendar using official GraphQL API
-      try {
-        const leetcodeGraphQLResponse = await fetch("/api/leetcode", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            query: `
-      query userProfileCalendar($username: String!, $year: Int) {
-        matchedUser(username: $username) {
-          userCalendar(year: $year) {
-            submissionCalendar
-          }
-        }
-      }
-    `,
-            variables: {
-              username: leetcodeUsername,
-              year: selectedYear,
-            },
-          }),
-        });
+      //   try {
+      //     const leetcodeGraphQLResponse = await fetch("/api/leetcode", {
+      //       method: "POST",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //       body: JSON.stringify({
+      //         query: `
+      //   query userProfileCalendar($username: String!, $year: Int) {
+      //     matchedUser(username: $username) {
+      //       userCalendar(year: $year) {
+      //         submissionCalendar
+      //       }
+      //     }
+      //   }
+      // `,
+      //         variables: {
+      //           username: leetcodeUsername,
+      //           year: selectedYear,
+      //         },
+      //       }),
+      //     });
 
-        if (leetcodeGraphQLResponse.ok) {
-          const leetcodeData = await leetcodeGraphQLResponse.json();
-          console.log("LeetCode GraphQL Response:", leetcodeData);
+      //     if (leetcodeGraphQLResponse.ok) {
+      //       const leetcodeData = await leetcodeGraphQLResponse.json();
+      //       console.log("LeetCode GraphQL Response:", leetcodeData);
 
-          if (
-            leetcodeData.data?.matchedUser?.userCalendar?.submissionCalendar
-          ) {
-            let calendar =
-              leetcodeData.data.matchedUser.userCalendar.submissionCalendar;
+      //       if (
+      //         leetcodeData.data?.matchedUser?.userCalendar?.submissionCalendar
+      //       ) {
+      //         let calendar =
+      //           leetcodeData.data.matchedUser.userCalendar.submissionCalendar;
 
-            // Parse the stringified calendar
-            if (typeof calendar === "string") {
-              calendar = JSON.parse(calendar);
-            }
+      //         // Parse the stringified calendar
+      //         if (typeof calendar === "string") {
+      //           calendar = JSON.parse(calendar);
+      //         }
 
-            console.log("LeetCode Calendar:", calendar);
+      //         console.log("LeetCode Calendar:", calendar);
 
-            // Process all LeetCode submissions for selected year
-            Object.entries(calendar).forEach(([timestamp, count]) => {
-              const date = new Date(parseInt(timestamp) * 1000);
-              const dateStr = date.toISOString().split("T")[0];
+      //         // Process all LeetCode submissions for selected year
+      //         Object.entries(calendar).forEach(([timestamp, count]) => {
+      //           const date = new Date(parseInt(timestamp) * 1000);
+      //           const dateStr = date.toISOString().split("T")[0];
 
-              const existing = activityMap.get(dateStr);
-              const leetcodeCount = Number(count) || 0;
+      //           const existing = activityMap.get(dateStr);
+      //           const leetcodeCount = Number(count) || 0;
 
-              console.log(`Processing ${dateStr}: LeetCode=${leetcodeCount}`);
+      //           console.log(`Processing ${dateStr}: LeetCode=${leetcodeCount}`);
 
-              if (existing) {
-                const newTotal = existing.github + leetcodeCount;
-                activityMap.set(dateStr, {
-                  ...existing,
-                  leetcode: leetcodeCount,
-                  total: newTotal,
-                  level: Math.max(
-                    existing.level,
-                    Math.min(4, Math.ceil(newTotal / 2))
-                  ),
-                });
-              } else {
-                // Create entry for LeetCode-only days
-                activityMap.set(dateStr, {
-                  date: date,
-                  github: 0,
-                  leetcode: leetcodeCount,
-                  total: leetcodeCount,
-                  level: Math.min(4, Math.ceil(leetcodeCount / 2)),
-                });
-              }
-            });
-          }
-        } else {
-          console.error("LeetCode GraphQL API failed");
-        }
-      } catch (leetcodeErr) {
-        console.error("LeetCode GraphQL fetch error:", leetcodeErr);
-      }
+      //           if (existing) {
+      //             const newTotal = existing.github + leetcodeCount;
+      //             activityMap.set(dateStr, {
+      //               ...existing,
+      //               leetcode: leetcodeCount,
+      //               total: newTotal,
+      //               level: Math.max(
+      //                 existing.level,
+      //                 Math.min(4, Math.ceil(newTotal / 2))
+      //               ),
+      //             });
+      //           } else {
+      //             // Create entry for LeetCode-only days
+      //             activityMap.set(dateStr, {
+      //               date: date,
+      //               github: 0,
+      //               leetcode: leetcodeCount,
+      //               total: leetcodeCount,
+      //               level: Math.min(4, Math.ceil(leetcodeCount / 2)),
+      //             });
+      //           }
+      //         });
+      //       }
+      //     } else {
+      //       console.error("LeetCode GraphQL API failed");
+      //     }
+      //   } catch (leetcodeErr) {
+      //     console.error("LeetCode GraphQL fetch error:", leetcodeErr);
+      //   }
 
       const activitiesArray = Array.from(activityMap.values()).sort(
         (a, b) => a.date.getTime() - b.date.getTime()
@@ -218,7 +218,7 @@ export function CombinedActivityTracker({
     } finally {
       setIsLoading(false);
     }
-  }, [githubUsername, leetcodeUsername, selectedYear, calculateStreaks]);
+  }, [githubUsername, selectedYear, calculateStreaks]);
 
   useEffect(() => {
     fetchCombinedActivities();
@@ -332,7 +332,7 @@ export function CombinedActivityTracker({
           >
             GitHub <ExternalLink size={14} />
           </a>
-          <span className="text-gray-400">|</span>
+          {/* <span className="text-gray-400">|</span>
           <a
             href={`https://leetcode.com/${leetcodeUsername}`}
             target="_blank"
@@ -340,7 +340,7 @@ export function CombinedActivityTracker({
             className="flex items-center gap-1 text-sm text-emerald-600 dark:text-emerald-400 hover:underline"
           >
             LeetCode <ExternalLink size={14} />
-          </a>
+          </a> */}
         </div>
       </div>
 
@@ -500,7 +500,7 @@ export function CombinedActivityTracker({
                 </span>
               </div>
 
-              <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+              {/* <div className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
                 <div className="flex items-center gap-2">
                   <SiLeetcode
                     size={18}
@@ -514,9 +514,9 @@ export function CombinedActivityTracker({
                   {selectedDay.leetcode}{" "}
                   {selectedDay.leetcode === 1 ? "submission" : "submissions"}
                 </span>
-              </div>
+              </div> */}
 
-              <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
+              {/* <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
                     Total Activity
@@ -525,7 +525,7 @@ export function CombinedActivityTracker({
                     {selectedDay.total}
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
