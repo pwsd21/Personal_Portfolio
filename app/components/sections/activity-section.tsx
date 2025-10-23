@@ -7,7 +7,7 @@ import {
   TrendingUp,
   ExternalLink,
   Github,
-  Code2,
+  // Code2,
 } from "lucide-react";
 import { CombinedActivityTracker } from "../activity/combined-activity-tracker";
 import { GitHubLanguages } from "../activity/github-languages";
@@ -66,7 +66,7 @@ export function ActivitySection() {
       {/* Two Column Layout for LeetCode Stats and Languages */}
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-full">
         {/* LeetCode Stats */}
-        <SpotlightCard
+        {/* <SpotlightCard
           gradientColor="rgba(34, 197, 94, 0.1)"
           lightGradientColor="rgba(8, 9, 10, 0.1)"
           spotlightSize={400}
@@ -93,9 +93,9 @@ export function ActivitySection() {
                 View <ExternalLink size={14} />
               </a>
             </div>
-            {/* <LeetCodeStats username="pawansachdeva1998" /> */}
+            <LeetCodeStats username="pawansachdeva1998" />
           </div>
-        </SpotlightCard>
+        </SpotlightCard> */}
 
         {/* GitHub Languages */}
         <SpotlightCard
