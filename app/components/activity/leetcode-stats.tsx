@@ -34,12 +34,14 @@ export function LeetCodeStats({
       const response = await fetch(
         `https://leetcode-stats-api.herokuapp.com/${username}`
       );
+      console.log(response, 'resssss')
 
       if (!response.ok) {
         throw new Error("Failed to fetch LeetCode data");
       }
 
       const data = await response.json();
+      console.log(data, 'dataaa')
 
       setStats({
         totalSolved: data.totalSolved || 0,

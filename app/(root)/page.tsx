@@ -18,9 +18,9 @@ export default function Home() {
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <SkillsSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
-      <ProjectsSection />
-      <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <ExperienceSection />
+      <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
+      <ProjectsSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <ServicesSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />

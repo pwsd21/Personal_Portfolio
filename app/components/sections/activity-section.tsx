@@ -4,15 +4,14 @@ import HeadingBadge from "@/app/components/heading-badge";
 import { SpotlightCard } from "@/app/components/ui/spotlight-card";
 import {
   Activity,
-  //   Github,
-  //   Code2,
   TrendingUp,
   ExternalLink,
   Github,
+  Code2,
 } from "lucide-react";
 import { CombinedActivityTracker } from "../activity/combined-activity-tracker";
-// import { LeetCodeStats } from "../activity/leetcode-stats";
 import { GitHubLanguages } from "../activity/github-languages";
+// import { LeetCodeStats } from "../activity/leetcode-stats";
 
 export function ActivitySection() {
   return (
@@ -33,7 +32,8 @@ export function ActivitySection() {
             </span>
           </h3>
           <p className="text-[#737373] dark:text-[#A1A1AA] text-sm">
-            Track my GitHub activities, streaks, and programming language usage.
+            Track my combined GitHub & Leetcode activities, streaks, and
+            programming languages usage.
           </p>
         </div>
       </div>
@@ -58,7 +58,7 @@ export function ActivitySection() {
           </div>
           <CombinedActivityTracker
             githubUsername="pwsd21"
-            // leetcodeUsername="pawansachdeva1998"
+            leetcodeUsername="pawansachdeva1998"
           />
         </div>
       </SpotlightCard>
@@ -66,7 +66,7 @@ export function ActivitySection() {
       {/* Two Column Layout for LeetCode Stats and Languages */}
       <div className="grid grid-cols-1 lg:grid-cols-1 gap-6 w-full">
         {/* LeetCode Stats */}
-        {/* <SpotlightCard
+        <SpotlightCard
           gradientColor="rgba(34, 197, 94, 0.1)"
           lightGradientColor="rgba(8, 9, 10, 0.1)"
           spotlightSize={400}
@@ -93,9 +93,9 @@ export function ActivitySection() {
                 View <ExternalLink size={14} />
               </a>
             </div>
-            <LeetCodeStats username="pawansachdeva1998" />
+            {/* <LeetCodeStats username="pawansachdeva1998" /> */}
           </div>
-        </SpotlightCard> */}
+        </SpotlightCard>
 
         {/* GitHub Languages */}
         <SpotlightCard
