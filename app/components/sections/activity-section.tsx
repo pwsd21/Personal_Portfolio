@@ -53,7 +53,7 @@ export function ActivitySection() {
               className="text-gray-900 dark:text-emerald-500"
             />
             <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Combined Activity
+              Activity Tracker
             </h4>
           </div>
           <CombinedActivityTracker

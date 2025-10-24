@@ -83,15 +83,19 @@ CombinedActivityTrackerProps) {
     }
 
     // Calculate current streak backward from today
+    // Normalize today to UTC to match GitHub API dates
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const utcToday = new Date(
+      Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate())
+    );
 
     current = 0;
     for (let i = allDates.length - 1; i >= 0; i--) {
       const date = allDates[i].date;
       const diffDays = Math.floor(
-        (today.getTime() - date.getTime()) / 86400000
+        (utcToday.getTime() - date.getTime()) / 86400000
       );
+
       if (diffDays === current && allDates[i].total > 0) {
         current++;
       } else if (diffDays > current) {
