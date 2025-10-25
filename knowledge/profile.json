@@ -1,0 +1,94 @@
+[
+  {
+    "title": "Introduction and Professional Summary",
+    "content": "Hi, I'm Pawan Sachdeva, a Senior Software Engineer passionate about crafting seamless digital experiences. I specialize in building web apps with Next.js, React, TypeScript, Tailwind CSS, Django, Node.js, and more. I'm always excited to tackle new challenges where I can create value and grow as a coder."
+  },
+  {
+    "title": "Detailed About Me - Who I Am",
+    "content": "I'm a passionate full-stack developer with a keen eye for design and a love for creating seamless user experiences. With over 4 years of experience in web development, I've worked on a range of projects—from small business websites to complex enterprise applications. My approach blends technical expertise with creative problem-solving, ensuring each project is not just functional, but also visually engaging and user-friendly."
+  },
+  {
+    "title": "My Development Journey",
+    "content": "My tech journey began in 2021 after graduating college, driven by a growing interest in coding during my student years. Fascinated by how things work behind the scenes, I chose to pursue software development—starting with web development as my gateway. Since then, I’ve built real-world projects, explored new technologies, and collaborated with amazing teams. Each step has sharpened my skills and deepened my passion for learning and building impactful digital solutions."
+  },
+  {
+    "title": "Life Beyond Coding (Hobbies and Fitness)",
+    "content": "Outside of tech, I enjoy playing and watching cricket, following football, watching movies, and playing chess—all of which fuel my creativity and keep me inspired. I’m also passionate about fitness and love hitting the gym regularly to stay energized and focused in both work and life."
+  },
+  {
+    "title": "Contact Information and Social Links",
+    "content": "I'm always excited to collaborate on interesting projects or just have a great tech conversation! You can contact me via phone at +91-8968692484 or via email at pawansachdeva1998@gmail.com. You can find my profiles on GitHub (https://github.com/pwsd21) and LinkedIn (https://www.linkedin.com/in/pawan-sachdeva-2a231017b/). My resume is available at: https://drive.google.com/file/d/1LkA_hW8qlcdY8Cr4uwOQ86bXMB2hF1a7/view?usp=sharing. I typically respond within 1 hour."
+  },
+  {
+    "title": "Current Work Preferences & Availability",
+    "content": "I am actively looking for new job opportunities, majorly targeting remote roles and hybrid positions in Gurgaon. Open to exciting projects where I can contribute immediately."
+  },
+  {
+    "title": "Hobbies and Interests",
+    "content": "I enjoy playing cricket, following football, watching movies, and playing chess. These activities help me stay creative, relaxed, and energized for work."
+  },
+  {
+    "title": "Certifications",
+    "content": "• HackerRank Certification: React\n• HackerRank Certification: JavaScript\n• Azure DevOps Certification from Laminaar Aviation Infotech\n• NPTEL Certification: Joy of Computing using Python"
+  },
+  {
+    "title": "Work Experience: Software Developer at Hitachi Mgrm Net (June 2024 - Present)",
+    "content": "Led CRM platform development for 8M+ users across 5000+ schools, using Next.js and a scalable micro-frontend architecture. Implemented real-time calling in the agent module with WebRTC, JsSIP, Asterisk, and Socket.IO, improving agent response time by 40%. Integrated AI-driven call summaries with RingCentral and added Jitsi for seamless in-browser video calls, reducing manual documentation by 90%. Architected Mid-Day Meal system for 3000+ schools using Next.js, Zustand, and React Query, automating meal tracking and staff payouts. Technologies used: Next.js, React, TypeScript, Tailwind CSS, Mantine, WebRTC, JsSip, NodeJS, Zustand, React Query."
+  },
+  {
+    "title": "Work Experience: Associate Software Engineer at Laminaar Aviation Infotech (Feb 2023 - May 2024)",
+    "content": "Led a team of 4 to build airline operational modules using React.js, RTK and a custom MUI library. Achieved 80%+ test coverage using Jest, RTL and MSW, maintaining <5% code duplication (SonarQube). Deployed Node.js services on AWS EC2 with PM2, increasing uptime and reliability for airline crew systems. Technologies used: React, TypeScript, Jest, React Testing Library, Puppeteer, MS SQL."
+  },
+  {
+    "title": "Work Experience: ReactJS Developer (Contract) at Startlazaa Pvt Ltd (Aug 2022 - Dec 2024)",
+    "content": "Built responsive job portal modules in ReactJS + Tailwind, increasing engagement by 25%. Developed OTP-based authentication using JWT and Socket.IO, reducing login time by 30%. Optimized MongoDB-backed Node.js APIs, improving response time by 40%. Technologies used: React, TypeScript, Node.js, Websockets, React Hook Form, MongoDB."
+  },
+  {
+    "title": "Work Experience: Programmer Analyst Trainee at Cognizant (July 2021 - July 2022)",
+    "content": "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers. Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards. Integrated AWS services (EC2, S3, IAM) via CI/CD (Jenkins) to streamline deployments. Technologies used: React, JavaScript, REST APIs, Material UI, MongoDB, Node.js."
+  },
+  {
+    "title": "Project: Figma Clone",
+    "content": "Crafted a Figma clone using NextJS, Tailwind CSS, and Typescript, powered by Liveblocks. Project link: https://figma-clone-git-main-pawan-kumar-sachdevas-projects.vercel.app/. Technologies: React, Next.js, shadcn, Tailwind CSS. Year: 2024."
+  },
+  {
+    "title": "Project: Rapid Chat App",
+    "content": "Engineered a full-stack real-time Chat Application with MERN and Chakra UI, powered by Socket.IO. Project link: https://rapid-chat-q01f.onrender.com/. Technologies: Javascript, NodeJs, ReactJS, Chakra UI. Year: 2023."
+  },
+  {
+    "title": "Service Offered: Frontend Development",
+    "content": "Building responsive and dynamic user interfaces using React, Next.js, and TypeScript. Focusing on performance, accessibility, and modern design principles."
+  },
+  {
+    "title": "Service Offered: Full Stack Web Apps",
+    "content": "Developing end-to-end web applications with modern tech stack including Next.js, Node.js, and MongoDB. Ensuring scalable and maintainable solutions."
+  },
+  {
+    "title": "Service Offered: UI/UX Implementation",
+    "content": "Transforming design mockups into pixel-perfect, responsive interfaces using Tailwind CSS and modern CSS techniques. Ensuring smooth animations and transitions."
+  },
+  {
+    "title": "Service Offered: API Development",
+    "content": "Creating robust and efficient RESTful APIs using Node.js and Express. Implementing secure authentication, data validation, and proper error handling."
+  },
+  {
+    "title": "Skill Category: Languages",
+    "content": "My primary languages include JavaScript, TypeScript, Python, HTML5, and CSS3."
+  },
+  {
+    "title": "Skill Category: Frontend Technologies",
+    "content": "I am proficient in React.js, Next.js, Tailwind CSS, RRV7 (Remix), Material UI, NextUI, Mantine, shadcn, Zustand, Redux Toolkit, and React Query."
+  },
+  {
+    "title": "Skill Category: Backend and Databases",
+    "content": "My experience includes Node.js, Express.js, PostgreSQL, and MongoDB."
+  },
+  {
+    "title": "Skill Category: Real-Time Communication",
+    "content": "I have experience with WebRTC, JsSIP, Asterisk, Socket.IO, and Jitsi."
+  },
+  {
+    "title": "Skill Category: DevOps and Deployment",
+    "content": "I use Git, GitHub, Docker, Vercel, Netlify, and pm2 for version control, containerization, and deployment."
+  }
+]

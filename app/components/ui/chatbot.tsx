@@ -13,7 +13,7 @@ const WELCOME_MESSAGE: Message = {
   id: "welcome-01",
   role: "assistant",
   content:
-    "Hi, I'm Kuldeep, Pawan's personal chatbot assistant. How can I help you today?",
+    "Hi, I'm Pawan's personal chatbot assistant. How can I help you today?",
 };
 
 export default function ChatBot() {
@@ -21,7 +21,7 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [initialLoad, setInitialLoad] = useState(true); // New state to track initial load
+  const [initialLoad, setInitialLoad] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -32,21 +32,21 @@ export default function ChatBot() {
     scrollToBottom();
   }, [messages]);
 
-  // New useEffect to handle the delayed popup and welcome message
   useEffect(() => {
     if (initialLoad) {
       const timer = setTimeout(() => {
-        // 1. Open the chat window
         setIsOpen(true);
-        // 2. Set the initial message only if no other messages exist
         setMessages([WELCOME_MESSAGE]);
-        setInitialLoad(false); // Mark initial loading as complete
+        setInitialLoad(false);
+
+        // Play notification sound
+        const audio = new Audio("/sounds/notification.mp3");
+        audio.play().catch((err) => console.log("Audio play error:", err));
       }, 3000);
 
-      return () => clearTimeout(timer); // Cleanup the timer on unmount
+      return () => clearTimeout(timer);
     }
   }, [initialLoad]);
-  // ------------------------------------------------------------------
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -65,11 +65,8 @@ export default function ChatBot() {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          // Send ALL current messages including the new user message
           messages: [...messages, userMessage].map((m) => ({
             role: m.role,
             content: m.content,
@@ -85,17 +82,11 @@ export default function ChatBot() {
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
       let assistantMessage = "";
-
       const assistantMessageId = (Date.now() + 1).toString();
 
-      // Add an empty assistant message for streaming
       setMessages((prev) => [
         ...prev,
-        {
-          id: assistantMessageId,
-          role: "assistant",
-          content: "",
-        },
+        { id: assistantMessageId, role: "assistant", content: "" },
       ]);
 
       if (reader) {
@@ -103,11 +94,9 @@ export default function ChatBot() {
           const { done, value } = await reader.read();
           if (done) break;
 
-          // CRITICAL FIX: Decode the chunk and append it directly
           const text = decoder.decode(value, { stream: true });
           assistantMessage += text;
 
-          // Update the state with the accumulated text
           setMessages((prev) =>
             prev.map((m) =>
               m.id === assistantMessageId
@@ -128,17 +117,16 @@ export default function ChatBot() {
         },
       ]);
     } finally {
-      // Set loading to false AFTER the stream is done
       setIsLoading(false);
     }
   };
 
   return (
     <>
-      {/* Chat Toggle Button */}
+      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+        className="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300"
         aria-label="Toggle chat"
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
@@ -146,12 +134,19 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-96 h-[500px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 dark:border-gray-700">
+        <div className="fixed bottom-24 right-6 z-50 w-[360px] h-[500px] bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-300 dark:border-gray-700">
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 flex items-center justify-between">
+          <div
+            className="text-white p-4 flex items-center justify-between"
+            style={{
+              background: "rgba(34, 197, 94, 0.10)",
+            }}
+          >
             <div className="flex items-center gap-2">
-              <MessageCircle size={20} />
-              <h3 className="font-semibold">AI Assistant</h3>
+              <MessageCircle size={20} className="dark:text-white text-black" />
+              <h3 className="font-semibold text-black dark:text-white">
+                AI Assistant
+              </h3>
             </div>
             <span className="text-xs bg-white/20 px-2 py-1 rounded-full">
               Online
@@ -159,14 +154,17 @@ export default function ChatBot() {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50 dark:bg-gray-800">
+          <div
+            className="flex-1 overflow-y-auto p-4 space-y-3"
+            style={{ background: "rgba(15, 23, 42, 0.15)" }}
+          >
             {messages.length === 0 && (
               <div className="text-center text-gray-500 dark:text-gray-400 mt-8">
                 <MessageCircle size={48} className="mx-auto mb-4 opacity-50" />
                 <p className="text-sm">Hi! How can I help you today?</p>
               </div>
             )}
-            {/* The rest of the message rendering logic remains the same */}
+
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -175,10 +173,10 @@ export default function ChatBot() {
                 }`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                  className={`max-w-[85%] break-words rounded-2xl px-4 py-2 ${
                     message.role === "user"
-                      ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-                      : "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-gray-600"
+                      ? "bg-green-500/30 text-white"
+                      : "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600"
                   }`}
                 >
                   <p className="text-sm whitespace-pre-wrap">
@@ -190,18 +188,20 @@ export default function ChatBot() {
 
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white dark:bg-gray-700 rounded-2xl px-4 py-2 border border-gray-200 dark:border-gray-600">
-                  <Loader2 size={16} className="animate-spin text-purple-600" />
+                <div className="bg-white dark:bg-gray-700 rounded-2xl px-4 py-2 border border-gray-300 dark:border-gray-600">
+                  <Loader2 size={16} className="animate-spin text-green-500" />
                 </div>
               </div>
             )}
+
             <div ref={messagesEndRef} />
           </div>
 
           {/* Input Area */}
           <form
             onSubmit={handleSubmit}
-            className="p-4 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+            className="p-4 border-t border-gray-300 dark:border-gray-700"
+            style={{ background: "rgba(15, 23, 42, 0.15)" }}
           >
             <div className="flex gap-2">
               <input
@@ -209,13 +209,13 @@ export default function ChatBot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
-                className="flex-1 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-600 text-sm"
+                className="flex-1 px-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 text-sm break-words"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-2 rounded-full hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-green-500/70 text-white p-2 rounded-full hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Send message"
               >
                 <Send size={20} />
