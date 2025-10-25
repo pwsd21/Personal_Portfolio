@@ -19,7 +19,7 @@ export const ModeToggle = () => {
   }
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed top-10 left-5 z-1000">
       <button
         type="button"
         className={cn("px-2 cursor-pointer z-50")}

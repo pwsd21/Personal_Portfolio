@@ -9,11 +9,19 @@ interface Message {
   content: string;
 }
 
+const WELCOME_MESSAGE: Message = {
+  id: "welcome-01",
+  role: "assistant",
+  content:
+    "Hi, I'm Kuldeep, Pawan's personal chatbot assistant. How can I help you today?",
+};
+
 export default function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [initialLoad, setInitialLoad] = useState(true); // New state to track initial load
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -23,6 +31,22 @@ export default function ChatBot() {
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // New useEffect to handle the delayed popup and welcome message
+  useEffect(() => {
+    if (initialLoad) {
+      const timer = setTimeout(() => {
+        // 1. Open the chat window
+        setIsOpen(true);
+        // 2. Set the initial message only if no other messages exist
+        setMessages([WELCOME_MESSAGE]);
+        setInitialLoad(false); // Mark initial loading as complete
+      }, 3000);
+
+      return () => clearTimeout(timer); // Cleanup the timer on unmount
+    }
+  }, [initialLoad]);
+  // ------------------------------------------------------------------
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +69,7 @@ export default function ChatBot() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
+          // Send ALL current messages including the new user message
           messages: [...messages, userMessage].map((m) => ({
             role: m.role,
             content: m.content,
@@ -52,13 +77,18 @@ export default function ChatBot() {
         }),
       });
 
-      if (!response.ok) throw new Error("Failed to get response");
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to get response");
+      }
 
       const reader = response.body?.getReader();
       const decoder = new TextDecoder();
       let assistantMessage = "";
 
       const assistantMessageId = (Date.now() + 1).toString();
+
+      // Add an empty assistant message for streaming
       setMessages((prev) => [
         ...prev,
         {
@@ -73,22 +103,18 @@ export default function ChatBot() {
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value);
-          const lines = chunk.split("\n");
+          // CRITICAL FIX: Decode the chunk and append it directly
+          const text = decoder.decode(value, { stream: true });
+          assistantMessage += text;
 
-          for (const line of lines) {
-            if (line.startsWith("0:")) {
-              const text = line.slice(2).replace(/^"|"$/g, "");
-              assistantMessage += text;
-              setMessages((prev) =>
-                prev.map((m) =>
-                  m.id === assistantMessageId
-                    ? { ...m, content: assistantMessage }
-                    : m
-                )
-              );
-            }
-          }
+          // Update the state with the accumulated text
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantMessageId
+                ? { ...m, content: assistantMessage }
+                : m
+            )
+          );
         }
       }
     } catch (error) {
@@ -102,6 +128,7 @@ export default function ChatBot() {
         },
       ]);
     } finally {
+      // Set loading to false AFTER the stream is done
       setIsLoading(false);
     }
   };
@@ -139,7 +166,7 @@ export default function ChatBot() {
                 <p className="text-sm">Hi! How can I help you today?</p>
               </div>
             )}
-
+            {/* The rest of the message rendering logic remains the same */}
             {messages.map((message) => (
               <div
                 key={message.id}
