@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { cn } from "@/app/lib/utils";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 interface MobileNavProps {
   isOpen?: boolean;
@@ -26,6 +27,7 @@ const MobileNav = ({
     { id: "contact", label: "Contact" },
   ],
 }: MobileNavProps) => {
+  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -142,6 +144,63 @@ const MobileNav = ({
                 />
               </Link>
             ))}
+
+            {/* Theme Toggle */}
+            <button
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className={cn(
+                "group flex items-center justify-between px-4 py-3.5 text-base rounded-sm relative overflow-hidden w-full",
+                "text-[#737373] dark:text-[#A1A1AA]",
+                "transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              )}
+              style={{
+                transitionDelay: `${sections.length * 75}ms`,
+                opacity: isOpen ? 1 : 0,
+                transform: isOpen
+                  ? "translateX(0) scale(1)"
+                  : "translateX(2rem) scale(0.95)",
+              }}
+              aria-label="Toggle theme"
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            >
+              {/* Background Highlight */}
+              <div
+                className={cn(
+                  "absolute inset-0 w-full h-full rounded-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                  "opacity-0 group-hover:opacity-100 scale-95 group-hover:scale-100",
+                  "bg-gray-100 dark:bg-[#191a1a]"
+                )}
+              />
+
+              {/* Shine Effect */}
+              <div
+                className={cn(
+                  "absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out overflow-hidden",
+                  "opacity-0 group-hover:opacity-20"
+                )}
+              >
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-r from-transparent via-[#08090a]/30 to-transparent dark:from-transparent dark:via-emerald-500/30 dark:to-transparent"
+                  )}
+                  style={{ animation: "var(--animate-shine)" }}
+                />
+              </div>
+
+              {/* Content */}
+              <span className="relative z-10 font-normal transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-black dark:group-hover:text-white flex items-center gap-2">
+                {theme === "dark" ? "Light" : "Dark"} Mode
+              </span>
+
+              {/* Icon */}
+              <div className="relative z-10">
+                {theme === "dark" ? (
+                  <Sun className="w-4 h-4 text-gray-400 dark:text-gray-500 transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-[#08090a] dark:group-hover:text-white" />
+                ) : (
+                  <Moon className="w-4 h-4 text-gray-400 dark:text-gray-500 transition-colors duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-[#08090a] dark:group-hover:text-white" />
+                )}
+              </div>
+            </button>
           </div>
         </div>
       </div>

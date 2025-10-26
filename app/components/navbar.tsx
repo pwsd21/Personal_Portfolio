@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/app/lib/utils";
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import MobileNav from "./mobile-nav";
 
 interface NavbarProps {
@@ -32,7 +32,7 @@ export function Navbar({
     { id: "contact", label: "Contact" },
   ],
 }: NavbarProps) {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("about");
   const [scrolled, setScrolled] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -218,6 +218,24 @@ export function Navbar({
               {section.label}
             </Link>
           ))}
+
+          {/* Theme Toggle */}
+          <button
+            type="button"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className={cn(
+              "px-3 py-1.5 rounded-full transition-all duration-300 relative overflow-hidden flex items-center justify-center",
+              "text-[#737373] dark:text-[#A1A1AA] hover:text-black dark:hover:text-white"
+            )}
+            aria-label="Toggle theme"
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-4 h-4" />
+            ) : (
+              <Moon className="w-4 h-4" />
+            )}
+          </button>
         </div>
 
         <button
