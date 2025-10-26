@@ -24,7 +24,7 @@ export default function ChatBot() {
   const [initialLoad, setInitialLoad] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  // const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -37,9 +37,9 @@ export default function ChatBot() {
   useEffect(() => {
     if (initialLoad) {
       const timer = setTimeout(() => {
-        if (!isMobile) {
-          setIsOpen(true);
-        }
+        // if (!isMobile) {
+        setIsOpen(true);
+        // }
         setMessages([WELCOME_MESSAGE]);
         setInitialLoad(false);
 
