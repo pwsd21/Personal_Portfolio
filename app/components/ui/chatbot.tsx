@@ -24,6 +24,8 @@ export default function ChatBot() {
   const [initialLoad, setInitialLoad] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -35,7 +37,9 @@ export default function ChatBot() {
   useEffect(() => {
     if (initialLoad) {
       const timer = setTimeout(() => {
-        setIsOpen(true);
+        if (!isMobile) {
+          setIsOpen(true);
+        }
         setMessages([WELCOME_MESSAGE]);
         setInitialLoad(false);
 
@@ -134,7 +138,7 @@ export default function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[360px] h-[500px] bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-300 dark:border-gray-700">
+        <div className="fixed bottom-24 right-6 z-50 md:w-[360px] md:h-[500px] h-86 w-76 bg-gray-50 dark:bg-gray-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-gray-300 dark:border-gray-700">
           {/* Header */}
           <div
             className="text-white p-4 flex items-center justify-between"
