@@ -10,12 +10,27 @@ type Project = {
   videoUrl?: string;
   tags: string[];
   link?: string;
+  githubLink?: string;
+  npmLink?: string;
   year?: string;
 };
 
 const projects: Project[] = [
   {
     id: "1",
+    title: "use-history-ai",
+    description:
+      "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM with Chrome extension.",
+    imageUrl: "/projects/npmm.png",
+    videoUrl: "/projects/clipboard-ai.mp4", // Add demo video
+    tags: ["React", "TypeScript", "NPM Package", "Gemini AI"],
+    link: "https://www.npmjs.com/package/use-history-ai", // Your Vercel demo
+    npmLink: "https://www.npmjs.com/package/use-history-ai",
+    githubLink: "https://github.com/yourusername/use-history-ai",
+    year: "2024",
+  },
+  {
+    id: "2",
     title: "Figma Clone",
     description:
       "Crafted Figma clone using NextJS, Tailwind CSS, and Typescript, powered by Liveblocks.",
@@ -26,10 +41,10 @@ const projects: Project[] = [
     year: "2024",
   },
   {
-    id: "2",
+    id: "3",
     title: "Rapid Chat App",
     description:
-      "Engineered a full-stack real-time Chat Application with MERN and Chakra UI , powered by Socket.IO .",
+      "Engineered a full-stack real-time Chat Application with MERN and Chakra UI, powered by Socket.IO.",
     imageUrl: "",
     videoUrl: "/projects/chat.mp4",
     tags: ["Javascript", "NodeJs", "ReactJS", "Chakra UI"],

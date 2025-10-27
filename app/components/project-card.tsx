@@ -34,7 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
               src={project.imageUrl}
               alt={project.title}
               fill
-              className="object-cover p-1 rounded-sm"
+              className="object-cover p-1 rounded-sm max-w-60"
             />
           )}
           {project.videoUrl && (

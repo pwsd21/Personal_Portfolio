@@ -68,7 +68,7 @@ const experiences: Experience[] = [
     description: [
       "Built responsive job portal modules in ReactJS + Tailwind, increasing engagement by 25%",
       "Developed OTP-based authentication using JWT and Socket.IO, reducing login time by 30%.",
-      "Optimized MongoDB-backed Node.js APIs, improving response time by 40%.",
+      "Improved API integration and data fetching efficiency between frontend and Node.js backend.",
     ],
     technologies: [
       "React",

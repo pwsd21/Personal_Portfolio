@@ -28,6 +28,7 @@ export function Navbar({
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "experience", label: "Experience" },
+    { id: "certifications", label: "Certifications" },
     { id: "services", label: "Services" },
     { id: "contact", label: "Contact" },
   ],

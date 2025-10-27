@@ -6,6 +6,7 @@ import { IntroSection } from "@/app/components/sections/Intro-section";
 import { ProjectsSection } from "@/app/components/sections/projects-section";
 import { ServicesSection } from "@/app/components/sections/services-section";
 import { SkillsSection } from "@/app/components/sections/skills-section";
+import { CertificationsSection } from "../components/sections/certification-section";
 
 export default function Home() {
   return (
@@ -21,6 +22,8 @@ export default function Home() {
       <ExperienceSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <ProjectsSection />
+      <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
+      <CertificationsSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
       <ServicesSection />
       <hr className="w-full border-gray-300/90 dark:border-gray-300/10 mt-10" />
