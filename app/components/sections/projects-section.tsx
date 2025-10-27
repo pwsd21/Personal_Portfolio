@@ -27,7 +27,7 @@ const projects: Project[] = [
     link: "https://www.npmjs.com/package/use-history-ai", // Your Vercel demo
     npmLink: "https://www.npmjs.com/package/use-history-ai",
     githubLink: "https://github.com/yourusername/use-history-ai",
-    year: "2024",
+    year: "2025",
   },
   {
     id: "2",
