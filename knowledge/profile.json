@@ -9,11 +9,11 @@
   },
   {
     "title": "My Development Journey",
-    "content": "My tech journey began in 2021 after graduating college, driven by a growing interest in coding during my student years. Fascinated by how things work behind the scenes, I chose to pursue software development—starting with web development as my gateway. Since then, I’ve built real-world projects, explored new technologies, and collaborated with amazing teams. Each step has sharpened my skills and deepened my passion for learning and building impactful digital solutions."
+    "content": "My tech journey began in 2021 after graduating college, driven by a growing interest in coding during my student years. Fascinated by how things work behind the scenes, I chose to pursue software development—starting with web development as my gateway. Since then, I've built real-world projects, explored new technologies, and collaborated with amazing teams. Each step has sharpened my skills and deepened my passion for learning and building impactful digital solutions."
   },
   {
     "title": "Life Beyond Coding (Hobbies and Fitness)",
-    "content": "Outside of tech, I enjoy playing and watching cricket, following football, watching movies, and playing chess—all of which fuel my creativity and keep me inspired. I’m also passionate about fitness and love hitting the gym regularly to stay energized and focused in both work and life."
+    "content": "Outside of tech, I enjoy playing and watching cricket, following football, watching movies, and playing chess—all of which fuel my creativity and keep me inspired. I'm also passionate about fitness and love hitting the gym regularly to stay energized and focused in both work and life."
   },
   {
     "title": "Contact Information and Social Links",
@@ -29,7 +29,7 @@
   },
   {
     "title": "Certifications",
-    "content": "• HackerRank Certification: React\n• HackerRank Certification: JavaScript\n• Azure DevOps Certification from Laminaar Aviation Infotech\n• NPTEL Certification: Joy of Computing using Python"
+    "content": "• HackerRank Certification: JavaScript (Intermediate) - Credential ID: D2FDA6B7A920 - https://www.hackerrank.com/certificates/d2fda6b7a920\n• HackerRank Certification: Frontend Developer (React) - Credential ID: 75F161A4DE6A - https://www.hackerrank.com/certificates/75f161a4de6a\n• Azure DevOps Training from Laminaar Aviation Infotech - Credential ID: H2223-6243-CCT-ADO-074 - https://drive.google.com/file/d/1Q3Mjy4buU-fmMcysPEdNNXDmHQ0PPi94/view\n• NPTEL Certification: The Joy of Computing using Python - https://drive.google.com/file/d/1vFH7FqzLIZ4oyKdJSn02feJpRahwmXEq/view"
   },
   {
     "title": "Work Experience: Software Developer at Hitachi Mgrm Net (June 2024 - Present)",
@@ -46,6 +46,10 @@
   {
     "title": "Work Experience: Programmer Analyst Trainee at Cognizant (July 2021 - July 2022)",
     "content": "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers. Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards. Integrated AWS services (EC2, S3, IAM) via CI/CD (Jenkins) to streamline deployments. Technologies used: React, JavaScript, REST APIs, Material UI, MongoDB, Node.js."
+  },
+  {
+    "title": "Project: use-history-ai (NPM Package)",
+    "content": "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM with Chrome extension. NPM Package: https://www.npmjs.com/package/use-history-ai. GitHub: https://github.com/yourusername/use-history-ai. Technologies: React, TypeScript, NPM Package, Gemini AI. Year: 2024. Features include keyboard shortcuts (Ctrl+Shift+V), smart search, categories & tags, export/import functionality, and Chrome extension for system-wide clipboard tracking."
   },
   {
     "title": "Project: Figma Clone",
@@ -72,6 +76,10 @@
     "content": "Creating robust and efficient RESTful APIs using Node.js and Express. Implementing secure authentication, data validation, and proper error handling."
   },
   {
+    "title": "Service Offered: NPM Package Development",
+    "content": "Creating and publishing reusable React components and hooks as NPM packages. Specializing in developer tools, UI libraries, and utility packages with TypeScript support, comprehensive documentation, and CI/CD integration."
+  },
+  {
     "title": "Skill Category: Languages",
     "content": "My primary languages include JavaScript, TypeScript, Python, HTML5, and CSS3."
   },
@@ -89,6 +97,14 @@
   },
   {
     "title": "Skill Category: DevOps and Deployment",
-    "content": "I use Git, GitHub, Docker, Vercel, Netlify, and pm2 for version control, containerization, and deployment."
+    "content": "I use Git, GitHub, Docker, Vercel, Netlify, and pm2 for version control, containerization, and deployment. I also have experience with CI/CD pipelines using GitHub Actions."
+  },
+  {
+    "title": "Skill Category: Package Development",
+    "content": "I have experience creating and publishing NPM packages, including React hooks and components. Proficient with Turborepo for monorepo management, tsup for bundling, and implementing comprehensive testing with Vitest."
+  },
+  {
+    "title": "NPM Packages Published",
+    "content": "use-history-ai - An AI-powered clipboard history manager for React applications. Published on NPM at https://www.npmjs.com/package/use-history-ai. Features include clipboard tracking, AI analysis with Google Gemini, keyboard shortcuts, tags and categories, export/import functionality, and a Chrome extension."
   }
 ]
