@@ -187,8 +187,6 @@ CombinedActivityTrackerProps) {
       //           const existing = activityMap.get(dateStr);
       //           const leetcodeCount = Number(count) || 0;
 
-      //           console.log(`Processing ${dateStr}: LeetCode=${leetcodeCount}`);
-
       //           if (existing) {
       //             const newTotal = existing.github + leetcodeCount;
       //             activityMap.set(dateStr, {
