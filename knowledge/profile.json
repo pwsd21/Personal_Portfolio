@@ -49,7 +49,7 @@
   },
   {
     "title": "Project: use-history-ai (NPM Package)",
-    "content": "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM with Chrome extension. NPM Package: https://www.npmjs.com/package/use-history-ai. GitHub: https://github.com/yourusername/use-history-ai. Technologies: React, TypeScript, NPM Package, Gemini AI. Year: 2024. Features include keyboard shortcuts (Ctrl+Shift+V), smart search, categories & tags, export/import functionality, and Chrome extension for system-wide clipboard tracking."
+    "content": "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM with Chrome extension. NPM Package: https://www.npmjs.com/package/use-history-ai. GitHub: https://github.com/pwsd21/use-history-ai. Technologies: React, TypeScript, NPM Package, Gemini AI. Year: 2024. Features include keyboard shortcuts (Ctrl+Shift+V), smart search, categories & tags, export/import functionality, and Chrome extension for system-wide clipboard tracking."
   },
   {
     "title": "Project: Figma Clone",

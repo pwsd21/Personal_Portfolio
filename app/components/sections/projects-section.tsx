@@ -20,13 +20,13 @@ const projects: Project[] = [
     id: "1",
     title: "use-history-ai",
     description:
-      "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM with Chrome extension.",
+      "AI-powered clipboard history manager for React. Track clipboard, add tags/categories, and analyze with Google Gemini AI. Published on NPM.",
     imageUrl: "/projects/npmm.png",
     videoUrl: "/projects/clipboard-ai.mp4", // Add demo video
     tags: ["React", "TypeScript", "NPM Package", "Gemini AI"],
     link: "https://www.npmjs.com/package/use-history-ai", // Your Vercel demo
     npmLink: "https://www.npmjs.com/package/use-history-ai",
-    githubLink: "https://github.com/yourusername/use-history-ai",
+    githubLink: "https://github.com/pwsd21/use-history-ai",
     year: "2025",
   },
   {
