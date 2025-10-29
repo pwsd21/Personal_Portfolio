@@ -48,7 +48,7 @@ const certifications: Certification[] = [
     id: "4",
     title: "The Joy of Computing using Python",
     issuer: "NPTEL",
-    date: "2023",
+    date: "2021",
     // credentialId: "XXXXX",
     link: "https://drive.google.com/file/d/1vFH7FqzLIZ4oyKdJSn02feJpRahwmXEq/view",
     skills: ["Python", "Algorithms", "Data Structures"],

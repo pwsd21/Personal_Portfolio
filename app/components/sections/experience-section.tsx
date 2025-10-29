@@ -44,8 +44,8 @@ const experiences: Experience[] = [
     company: "Laminaar Aviation Infotech",
     companyLink:
       "https://www.linkedin.com/company/laminaar-aviation-infotech-private-limited/",
-    position: "Associate Software Engineer",
-    duration: "Feb 2023 - May 2024",
+    position: "Associate Software Engineer (Impacted by mass layoffs)",
+    duration: "Feb 2023 - March 2024",
     description: [
       "Led a team of 4 to build airline operational modules using React.js, RTK and a custom MUI library.",
       "Achieved 80%+ test coverage using Jest, RTL and MSW, maintaining <5% code duplication (SonarQube).",
@@ -60,30 +60,30 @@ const experiences: Experience[] = [
       "MS SQL",
     ],
   },
-  {
-    company: "Startlazaa Pvt Ltd",
-    companyLink: "https://www.linkedin.com/company/startlazaa",
-    position: "ReactJS Developer - Contract Role",
-    duration: "Aug 2022 - December 2024",
-    description: [
-      "Built responsive job portal modules in ReactJS + Tailwind, increasing engagement by 25%",
-      "Developed OTP-based authentication using JWT and Socket.IO, reducing login time by 30%.",
-      "Improved API integration and data fetching efficiency between frontend and Node.js backend.",
-    ],
-    technologies: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Websockets",
-      "React Hook Form",
-      "MongoDB",
-    ],
-  },
+  // {
+  //   company: "Startlazaa Pvt Ltd",
+  //   companyLink: "https://www.linkedin.com/company/startlazaa",
+  //   position: "ReactJS Developer - Contract Role",
+  //   duration: "Aug 2022 - December 2024",
+  //   description: [
+  //     "Built responsive job portal modules in ReactJS + Tailwind, increasing engagement by 25%",
+  //     "Developed OTP-based authentication using JWT and Socket.IO, reducing login time by 30%.",
+  //     "Improved API integration and data fetching efficiency between frontend and Node.js backend.",
+  //   ],
+  //   technologies: [
+  //     "React",
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Websockets",
+  //     "React Hook Form",
+  //     "MongoDB",
+  //   ],
+  // },
   {
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant",
     position: "Programmer Analyst Trainee",
-    duration: "July 2021 - July 2022",
+    duration: "July 2021 - January 2023",
     description: [
       "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers.",
       "Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards.",
