@@ -45,7 +45,7 @@ export default function ChatBot() {
 
         // Play notification sound
         const audio = new Audio("/sounds/notification.mp3");
-        audio.play().catch((err) => console.error("Audio play error:", err));
+        audio.play().catch((err) => console.log("Audio play error:", err));
       }, 3000);
 
       return () => clearTimeout(timer);

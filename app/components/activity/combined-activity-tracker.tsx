@@ -68,9 +68,8 @@ CombinedActivityTrackerProps) {
       );
     }
 
-    // Calculate longest and current streak
+    // Calculate longest streak
     let longest = 0;
-    let current = 0;
     let temp = 0;
 
     for (let i = 0; i < allDates.length; i++) {
@@ -82,23 +81,55 @@ CombinedActivityTrackerProps) {
       }
     }
 
-    // Calculate current streak backward from today
-    // Normalize today to UTC to match GitHub API dates
+    // Calculate current streak
+    // Get today's date in local timezone
     const today = new Date();
-    const utcToday = new Date(
-      Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate())
-    );
+    const todayDateStr = `${today.getFullYear()}-${String(
+      today.getMonth() + 1
+    ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
 
-    current = 0;
+    // Get yesterday's date
+    const yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    let current = 0;
+
+    // Check if we should start from today or yesterday
+    // If today has contributions, start from today; otherwise start from yesterday
+    const lastActivityDateStr =
+      allDates.length > 0
+        ? allDates[allDates.length - 1].date.toISOString().split("T")[0]
+        : "";
+
+    let startFromToday = false;
+    if (lastActivityDateStr === todayDateStr) {
+      const todayActivity = allDates[allDates.length - 1];
+      if (todayActivity.total > 0) {
+        startFromToday = true;
+      }
+    }
+
+    // Start counting from appropriate day
+    let checkDate = startFromToday ? today : yesterday;
+
+    // Go backwards and count consecutive days with contributions
     for (let i = allDates.length - 1; i >= 0; i--) {
-      const date = allDates[i].date;
-      const diffDays = Math.floor(
-        (utcToday.getTime() - date.getTime()) / 86400000
-      );
+      const activityDateStr = allDates[i].date.toISOString().split("T")[0];
+      const checkDateStr = `${checkDate.getFullYear()}-${String(
+        checkDate.getMonth() + 1
+      ).padStart(2, "0")}-${String(checkDate.getDate()).padStart(2, "0")}`;
 
-      if (diffDays === current && allDates[i].total > 0) {
-        current++;
-      } else if (diffDays > current) {
+      if (activityDateStr === checkDateStr) {
+        if (allDates[i].total > 0) {
+          current++;
+          // Move to previous day
+          checkDate = new Date(checkDate);
+          checkDate.setDate(checkDate.getDate() - 1);
+        } else {
+          // Found a day with no contributions, streak ends
+          break;
+        }
+      } else if (activityDateStr < checkDateStr) {
+        // We've gone past the expected date, streak ends
         break;
       }
     }
