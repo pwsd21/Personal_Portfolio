@@ -38,7 +38,7 @@ const certifications: Certification[] = [
     id: "3",
     title: "Azure DevOps Training",
     issuer: "Laminaar Aviation Infotech",
-    date: "2024",
+    date: "2023",
     credentialId: "H2223-6243-CCT-ADO-074",
     link: "https://drive.google.com/file/d/1Q3Mjy4buU-fmMcysPEdNNXDmHQ0PPi94/view",
     skills: ["Azure", "CI/CD", "DevOps", "Pipelines"],
