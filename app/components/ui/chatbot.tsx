@@ -24,8 +24,6 @@ export default function ChatBot() {
   const [initialLoad, setInitialLoad] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -37,13 +35,9 @@ export default function ChatBot() {
   useEffect(() => {
     if (initialLoad) {
       const timer = setTimeout(() => {
-        // if (!isMobile) {
         setIsOpen(true);
-        // }
         setMessages([WELCOME_MESSAGE]);
         setInitialLoad(false);
-
-        // Play notification sound
         const audio = new Audio("/sounds/notification.mp3");
         audio.play().catch((err) => console.log("Audio play error:", err));
       }, 3000);
