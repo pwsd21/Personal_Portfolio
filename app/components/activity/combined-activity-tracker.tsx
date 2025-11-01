@@ -44,7 +44,12 @@ CombinedActivityTrackerProps) {
   const calculateStreaks = useCallback((activities: Activity[]) => {
     if (activities.length === 0) return { current: 0, longest: 0 };
 
-    // Ensure all dates in year are represented (including zero-contribution days)
+    // Helper: format date in local timezone as YYYY-MM-DD
+    const formatLocalDate = (date: Date) => {
+      return date.toLocaleDateString("en-CA");
+    };
+
+    // Normalize all dates to local time
     const allDates: Activity[] = [];
     const firstDate = new Date(activities[0].date);
     const lastDate = new Date(activities[activities.length - 1].date);
@@ -54,9 +59,9 @@ CombinedActivityTrackerProps) {
       d <= lastDate;
       d.setDate(d.getDate() + 1)
     ) {
-      const dateStr = d.toISOString().split("T")[0];
+      const dateStr = formatLocalDate(d);
       const existing = activities.find(
-        (a) => a.date.toISOString().split("T")[0] === dateStr
+        (a) => formatLocalDate(a.date) === dateStr
       );
       allDates.push(
         existing || {
@@ -71,9 +76,8 @@ CombinedActivityTrackerProps) {
     // Calculate longest streak
     let longest = 0;
     let temp = 0;
-
-    for (let i = 0; i < allDates.length; i++) {
-      if (allDates[i].total > 0) {
+    for (const a of allDates) {
+      if (a.total > 0) {
         temp++;
         longest = Math.max(longest, temp);
       } else {
@@ -81,56 +85,36 @@ CombinedActivityTrackerProps) {
       }
     }
 
-    // Calculate current streak
-    // Get today's date in local timezone
+    // Calculate current streak based on local system time
     const today = new Date();
-    const todayDateStr = `${today.getFullYear()}-${String(
-      today.getMonth() + 1
-    ).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+    const todayStr = formatLocalDate(today);
 
-    // Get yesterday's date
-    const yesterday = new Date(today);
-    yesterday.setDate(yesterday.getDate() - 1);
+    // Check if last activity was today or earlier
+    // const lastActivityStr = formatLocalDate(allDates[allDates.length - 1].date);
+    const todayActivity =
+      allDates.find((a) => formatLocalDate(a.date) === todayStr) || null;
+
+    // If today's data exists and has contributions, start from today, else from yesterday
+    const startFromToday = todayActivity && todayActivity.total > 0;
+    const checkDate = new Date(today);
+    if (!startFromToday) checkDate.setDate(checkDate.getDate() - 1);
+
     let current = 0;
 
-    // Check if we should start from today or yesterday
-    // If today has contributions, start from today; otherwise start from yesterday
-    const lastActivityDateStr =
-      allDates.length > 0
-        ? allDates[allDates.length - 1].date.toISOString().split("T")[0]
-        : "";
-
-    let startFromToday = false;
-    if (lastActivityDateStr === todayDateStr) {
-      const todayActivity = allDates[allDates.length - 1];
-      if (todayActivity.total > 0) {
-        startFromToday = true;
-      }
-    }
-
-    // Start counting from appropriate day
-    let checkDate = startFromToday ? today : yesterday;
-
-    // Go backwards and count consecutive days with contributions
+    // Walk backward in time locally
     for (let i = allDates.length - 1; i >= 0; i--) {
-      const activityDateStr = allDates[i].date.toISOString().split("T")[0];
-      const checkDateStr = `${checkDate.getFullYear()}-${String(
-        checkDate.getMonth() + 1
-      ).padStart(2, "0")}-${String(checkDate.getDate()).padStart(2, "0")}`;
+      const activityDateStr = formatLocalDate(allDates[i].date);
+      const checkDateStr = formatLocalDate(checkDate);
 
       if (activityDateStr === checkDateStr) {
         if (allDates[i].total > 0) {
           current++;
-          // Move to previous day
-          checkDate = new Date(checkDate);
-          checkDate.setDate(checkDate.getDate() - 1);
+          checkDate.setDate(checkDate.getDate() - 1); // go to previous local day
         } else {
-          // Found a day with no contributions, streak ends
-          break;
+          break; // streak ended
         }
       } else if (activityDateStr < checkDateStr) {
-        // We've gone past the expected date, streak ends
-        break;
+        break; // gap day
       }
     }
 
