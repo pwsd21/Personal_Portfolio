@@ -6,6 +6,7 @@ import { IconBrandNextjs } from "@tabler/icons-react";
 import {
   SiAsterisk,
   SiExpress,
+  SiJest,
   SiJitsi,
   SiMantine,
   SiMaterialdesign,
@@ -14,12 +15,15 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiPm2,
+  SiPuppeteer,
   SiReact,
   SiReactquery,
   SiRedux,
+  SiRtl,
   SiSocketdotio,
   SiTypescript,
   SiVercel,
+  SiVitest,
   SiWebrtc,
 } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
@@ -100,8 +104,12 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    name: "DevOps & Deployment",
+    name: "Testing & DevOps",
     skills: [
+      { name: "Jest", icon: <SiJest /> },
+      { name: "React Testing Library", icon: <SiRtl /> },
+      { name: "Puppeteer", icon: <SiPuppeteer /> },
+      { name: "Vitest", icon: <SiVitest /> },
       { name: "Git", icon: <FaGitAlt /> },
       { name: "GitHub", icon: <FaGithub /> },
       { name: "Docker", icon: <FaDocker /> },
@@ -178,7 +186,7 @@ export function SkillsSection() {
           { value: "4+", label: "Years Experience" },
           { value: "10+", label: "Projects" },
           { value: "8+", label: "Clients" },
-          { value: "20+", label: "Technologies" },
+          { value: "25+", label: "Technologies" },
         ].map((highlight) => (
           <div
             key={highlight.label}
