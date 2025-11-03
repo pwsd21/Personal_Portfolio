@@ -83,7 +83,7 @@ const experiences: Experience[] = [
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant",
     position: "Programmer Analyst Trainee",
-    duration: "July 2021 - January 2023",
+    duration: "July 2021 - July 2022",
     description: [
       "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers.",
       "Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards.",
