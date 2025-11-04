@@ -80,9 +80,9 @@ const experiences: Experience[] = [
   //   ],
   // },
   {
-    company: "Career Break (Upskilling & Preparation)",
+    company: "Self Learning & Short-Term Remote Engagements",
     companyLink: "",
-    position: "Self Learning & Short-Term Remote Engagements",
+    position: "Career Break (Upskilling & Preparation)",
     duration: "August 2022 - January 2023",
     description: [
       "Focused on government exam preparation while enhancing technical proficiency through self-learning and freelance projects.",
