@@ -80,6 +80,18 @@ const experiences: Experience[] = [
   //   ],
   // },
   {
+    company: "Career Break (Upskilling & Preparation)",
+    companyLink: "",
+    position: "Self Learning & Short-Term Remote Engagements",
+    duration: "August 2022 - January 2023",
+    description: [
+      "Focused on government exam preparation while enhancing technical proficiency through self-learning and freelance projects.",
+      "Built small React and Node.js projects to strengthen full-stack fundamentals.",
+      "Explored PostgreSQL, JavaScript, and modern frameworks like Next.js during this period.",
+    ],
+    technologies: ["React", "Next.js", "Node.js", "JavaScript", "PostgreSQL"],
+  },
+  {
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant",
     position: "Programmer Analyst Trainee",
