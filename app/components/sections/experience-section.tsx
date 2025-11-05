@@ -60,25 +60,6 @@ const experiences: Experience[] = [
       "MS SQL",
     ],
   },
-  // {
-  //   company: "Startlazaa Pvt Ltd",
-  //   companyLink: "https://www.linkedin.com/company/startlazaa",
-  //   position: "ReactJS Developer - Contract Role",
-  //   duration: "Aug 2022 - December 2024",
-  //   description: [
-  //     "Built responsive job portal modules in ReactJS + Tailwind, increasing engagement by 25%",
-  //     "Developed OTP-based authentication using JWT and Socket.IO, reducing login time by 30%.",
-  //     "Improved API integration and data fetching efficiency between frontend and Node.js backend.",
-  //   ],
-  //   technologies: [
-  //     "React",
-  //     "TypeScript",
-  //     "Node.js",
-  //     "Websockets",
-  //     "React Hook Form",
-  //     "MongoDB",
-  //   ],
-  // },
   {
     company: "Self Learning & Short-Term Remote Engagements",
     companyLink: "",
