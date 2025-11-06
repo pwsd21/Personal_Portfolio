@@ -75,7 +75,7 @@ export function AboutSection() {
             </h4>
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               Outside of tech, I enjoy playing and watching cricket, following
-              football, watching movies, and playing chess—all of which fuel my
+              football, hitting the gym, and playing chess—all of which fuel my
               creativity and keep me inspired. I’m also passionate about fitness
               and love hitting the gym regularly to stay energized and focused
               in both work and life.
