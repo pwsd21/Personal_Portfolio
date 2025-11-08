@@ -12,7 +12,7 @@ type Certification = {
   credentialId?: string;
   link: string;
   skills: string[];
-  color: "emerald" | "blue" | "purple" | "orange";
+  color: "emerald";
 };
 
 const colorMap = {
