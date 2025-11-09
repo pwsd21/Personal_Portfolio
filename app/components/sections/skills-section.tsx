@@ -82,14 +82,10 @@ const skillCategories: SkillCategory[] = [
   {
     name: "Backend & Databases",
     skills: [
-      // { name: "Django", icon: <SiDjango /> },
       { name: "Node.js", icon: <SiNodedotjs /> },
       { name: "Express.js", icon: <SiExpress /> },
       { name: "PostgreSQL", icon: <BiLogoPostgresql /> },
       { name: "MongoDB", icon: <SiMongodb /> },
-      // { name: "Qdrant", icon: <RiDatabase2Fill /> },
-      // { name: "Redis", icon: <DiRedis /> },
-      // { name: "tRPC", icon: <SiTrpc /> }, // optional, if you use it
     ],
   },
   {
