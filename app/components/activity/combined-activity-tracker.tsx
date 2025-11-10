@@ -86,11 +86,8 @@ CombinedActivityTrackerProps) {
     }
 
     // Calculate current streak based on local system time
-    const now = new Date();
-    if (now.getHours() === 0 && now.getMinutes() < 10) {
-      now.setDate(now.getDate() - 1);
-    }
-    const todayStr = formatLocalDate(now);
+    const today = new Date();
+    const todayStr = formatLocalDate(today);
 
     // Check if last activity was today or earlier
     // const lastActivityStr = formatLocalDate(allDates[allDates.length - 1].date);
