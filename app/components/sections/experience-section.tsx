@@ -60,23 +60,23 @@ const experiences: Experience[] = [
       "MS SQL",
     ],
   },
-  {
-    company: "Self Learning & Short-Term Remote Engagements",
-    companyLink: "",
-    position: "Career Break (Upskilling & Preparation)",
-    duration: "August 2022 - January 2023",
-    description: [
-      "Focused on government exam preparation while enhancing technical proficiency through self-learning and freelance projects.",
-      "Built small React and Node.js projects to strengthen full-stack fundamentals.",
-      "Explored PostgreSQL, JavaScript, and modern frameworks like Next.js during this period.",
-    ],
-    technologies: ["React", "Next.js", "Node.js", "JavaScript", "PostgreSQL"],
-  },
+  // {
+  //   company: "Self Learning & Short-Term Remote Engagements",
+  //   companyLink: "",
+  //   position: "Career Break (Upskilling & Preparation)",
+  //   duration: "August 2022 - January 2023",
+  //   description: [
+  //     "Focused on government exam preparation while enhancing technical proficiency through self-learning and freelance projects.",
+  //     "Built small React and Node.js projects to strengthen full-stack fundamentals.",
+  //     "Explored PostgreSQL, JavaScript, and modern frameworks like Next.js during this period.",
+  //   ],
+  //   technologies: ["React", "Next.js", "Node.js", "JavaScript", "PostgreSQL"],
+  // },
   {
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant",
     position: "Programmer Analyst Trainee",
-    duration: "July 2021 - July 2022",
+    duration: "July 2021 - January 2023",
     description: [
       "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers.",
       "Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards.",
