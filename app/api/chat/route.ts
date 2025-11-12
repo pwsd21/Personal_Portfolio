@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     const profileData = loadProfile();
     const contextText = getFullContext(profileData);
 
-    // ✅ Updated system message: reference info, but allow normal AI responses
+    // Updated system message: reference info, but allow normal AI responses
     const systemMessage: ChatMessage = {
       role: "user",
       content: `You are Pawan Sachdeva's AI assistant. 
