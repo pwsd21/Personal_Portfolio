@@ -32,7 +32,7 @@
     "content": "• HackerRank Certification: JavaScript (Intermediate) - Credential ID: D2FDA6B7A920 - https://www.hackerrank.com/certificates/d2fda6b7a920\n• HackerRank Certification: Frontend Developer (React) - Credential ID: 75F161A4DE6A - https://www.hackerrank.com/certificates/75f161a4de6a\n• Azure DevOps Training from Laminaar Aviation Infotech - Credential ID: H2223-6243-CCT-ADO-074 - https://drive.google.com/file/d/1Q3Mjy4buU-fmMcysPEdNNXDmHQ0PPi94/view\n• NPTEL Certification: The Joy of Computing using Python - https://drive.google.com/file/d/1vFH7FqzLIZ4oyKdJSn02feJpRahwmXEq/view"
   },
   {
-    "title": "Work Experience: Software Developer at Hitachi Mgrm Net (June 2024 - Present)",
+    "title": "Work Experience: Senior Software Engineer at Hitachi Mgrm Net (June 2024 - Present)",
     "content": "Led CRM platform development for 8M+ users across 5000+ schools, using Next.js and a scalable micro-frontend architecture. Implemented real-time calling in the agent module with WebRTC, JsSIP, Asterisk, and Socket.IO, improving agent response time by 40%. Integrated AI-driven call summaries with RingCentral and added Jitsi for seamless in-browser video calls, reducing manual documentation by 90%. Architected Mid-Day Meal system for 3000+ schools using Next.js, Zustand, and React Query, automating meal tracking and staff payouts. Technologies used: Next.js, React, TypeScript, Tailwind CSS, Mantine, WebRTC, JsSip, NodeJS, Zustand, React Query."
   },
   {

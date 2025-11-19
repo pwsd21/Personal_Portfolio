@@ -19,7 +19,7 @@ const experiences: Experience[] = [
   {
     company: "Hitachi Mgrm Net",
     companyLink: "https://www.linkedin.com/company/hitachi-mgrm",
-    position: "Software Developer",
+    position: "Senior Software Engineer",
     duration: "June 2024 - Present",
     description: [
       "Led CRM platform development for 8M+ users across 5000+ schools, using Next.js and a scalable micro-frontend architecture.",
