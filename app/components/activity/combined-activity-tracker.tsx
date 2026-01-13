@@ -29,9 +29,10 @@ export function CombinedActivityTracker({
   githubUsername = "pwsd21",
 }: // leetcodeUsername = "pawansachdeva1998",
 CombinedActivityTrackerProps) {
+  const initialYear = new Date().getFullYear() - 1;
   const [activities, setActivities] = useState<Activity[]>([]);
   const [totalContributions, setTotalContributions] = useState(0);
-  const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
+  const [selectedYear, setSelectedYear] = useState(initialYear);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [streaks, setStreaks] = useState({ current: 0, longest: 0 });
