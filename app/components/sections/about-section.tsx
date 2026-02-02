@@ -38,7 +38,7 @@ export function AboutSection() {
             <p className="text-sm text-[#737373] dark:text-[#A1A1AA] leading-relaxed">
               I&apos;m a passionate full-stack developer with a keen eye for
               design and a love for creating seamless user experiences. With
-              over 4 years of experience in web development, I&apos;ve worked on
+              over 5 years of experience in web development, I&apos;ve worked on
               a range of projects—from small business websites to complex
               enterprise applications.
             </p>

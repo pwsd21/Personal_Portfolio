@@ -5,7 +5,7 @@
   },
   {
     "title": "Detailed About Me - Who I Am",
-    "content": "I'm a passionate full-stack developer with a keen eye for design and a love for creating seamless user experiences. With over 4 years of experience in web development, I've worked on a range of projects—from small business websites to complex enterprise applications. My approach blends technical expertise with creative problem-solving, ensuring each project is not just functional, but also visually engaging and user-friendly."
+    "content": "I'm a passionate full-stack developer with a keen eye for design and a love for creating seamless user experiences. With over 5 years of experience in web development, I've worked on a range of projects—from small business websites to complex enterprise applications. My approach blends technical expertise with creative problem-solving, ensuring each project is not just functional, but also visually engaging and user-friendly."
   },
   {
     "title": "My Development Journey",
@@ -40,7 +40,7 @@
     "content": "Led a team of 4 to build airline operational modules using React.js, RTK and a custom MUI library. Achieved 80%+ test coverage using Jest, RTL and MSW, maintaining <5% code duplication (SonarQube). Deployed Node.js services on AWS EC2 with PM2, increasing uptime and reliability for airline crew systems. Technologies used: React, TypeScript, Jest, React Testing Library, Puppeteer, MS SQL."
   },
   {
-    "title": "Work Experience: Programmer Analyst Trainee at Cognizant (July 2021 - July 2022)",
+    "title": "Work Experience: Programmer Analyst Trainee at Cognizant (January 2021 - January 2023)",
     "content": "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers. Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards. Integrated AWS services (EC2, S3, IAM) via CI/CD (Jenkins) to streamline deployments. Technologies used: React, JavaScript, REST APIs, Material UI, MongoDB, Node.js."
   },
   {

@@ -76,7 +76,7 @@ const experiences: Experience[] = [
     company: "Cognizant",
     companyLink: "https://www.linkedin.com/company/cognizant",
     position: "Programmer Analyst Trainee",
-    duration: "July 2021 - July 2022",
+    duration: "January 2021 - January 2023",
     description: [
       "Implemented pharma dashboards using React + Material UI V5 and REST APIs with responsive UI across all major browsers.",
       "Ensured accessibility compliance and delivered component-driven frontends aligned with UX standards.",
@@ -126,7 +126,7 @@ export function ExperienceSection() {
               className={cn(
                 "p-6 cursor-pointer transition-all duration-300 group rounded-sm border border-gray-200/80 dark:border-gray-800/50 ease-in-out hover:border-gray-900/30 dark:hover:border-emerald-500/30",
                 "hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-emerald-500/5",
-                expandedIndex === index ? "bg-opacity-10" : ""
+                expandedIndex === index ? "bg-opacity-10" : "",
               )}
               gradientColor="rgba(34, 197, 94, 0.15)"
               lightGradientColor="rgba(8, 9, 10, 0.15)"
@@ -148,7 +148,7 @@ export function ExperienceSection() {
                           expandedIndex === index ? "rotate-90" : "rotate-0",
                           expandedIndex === index
                             ? "opacity-100 translate-x-0 scale-100"
-                            : ""
+                            : "",
                         )}
                       />
                     </div>
@@ -168,7 +168,7 @@ export function ExperienceSection() {
                     "grid transition-all duration-500 ease-in-out",
                     expandedIndex === index
                       ? "grid-rows-[1fr] opacity-100 translate-y-0"
-                      : "grid-rows-[0fr] opacity-0 -translate-y-4"
+                      : "grid-rows-[0fr] opacity-0 -translate-y-4",
                   )}
                 >
                   <div className="overflow-hidden">
@@ -183,7 +183,7 @@ export function ExperienceSection() {
                               "transform-gpu",
                               expandedIndex === index
                                 ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-4"
+                                : "opacity-0 translate-y-4",
                             )}
                           >
                             {item}
@@ -205,7 +205,7 @@ export function ExperienceSection() {
                               "px-2 py-1 text-xs rounded-sm font-medium bg-white dark:bg-[#0a0a0a] border border-gray-200/80 dark:border-gray-800/50 text-[#737373] dark:text-[#A1A1AA] group-hover:border-gray-900/30 dark:group-hover:border-emerald-500/30 transition-all duration-300",
                               expandedIndex === index
                                 ? "opacity-100 translate-y-0"
-                                : "opacity-0 translate-y-4"
+                                : "opacity-0 translate-y-4",
                             )}
                           >
                             {tech}
