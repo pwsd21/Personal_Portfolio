@@ -80,6 +80,18 @@ const skillCategories: SkillCategory[] = [
     ],
   },
   {
+    name: "Email & Marketing",
+    skills: [
+      { name: "HTML Email" },
+      { name: "Responsive Email" },
+      { name: "Eloqua" },
+      { name: "Marketo" },
+      { name: "Salesforce Marketing Cloud" },
+      { name: "FreeMarker" },
+      { name: "Knak" },
+    ],
+  },
+  {
     name: "Backend & Databases",
     skills: [
       { name: "Node.js", icon: <SiNodedotjs /> },

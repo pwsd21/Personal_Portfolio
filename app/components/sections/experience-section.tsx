@@ -24,6 +24,8 @@ const experiences: Experience[] = [
     description: [
       "Led CRM platform development for 8M+ users across 5000+ schools, using Next.js and a scalable micro-frontend architecture.",
       "Implemented real-time calling in the agent module with WebRTC, JsSIP, Asterisk, and Socket.IO, improving agent response time by 40%.",
+      "Developed responsive HTML/CSS email templates from Figma designs for CRM communication workflows using FreeMarker-style templating, ensuring cross-client compatibility (Gmail, Outlook).",
+      "Integrated campaign communication templates within CRM journeys aligned with marketing automation platforms (Eloqua, Salesforce Marketing Cloud).",
       "Integrated AI-driven call summaries with RingCentral and added Jitsi for seamless in-browser video calls, reducing manual documentation by 90%.",
       "Architected Mid-Day Meal system for 3000+ schools using Next.js, Zustand, and React Query, automating meal tracking and staff payouts.",
     ],
